@@ -21,6 +21,10 @@
 		15A0743024C32CA500C2B2EB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A0742924C32CA500C2B2EB /* FMDatabasePool.m */; };
 		15A0743424C32CC600C2B2EB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A0743324C32CC600C2B2EB /* libsqlite3.tbd */; };
 		15A0743524C32CCD00C2B2EB /* moods.db in Resources */ = {isa = PBXBuildFile; fileRef = 15A0743124C32CBA00C2B2EB /* moods.db */; };
+		15A0745C24C3672200C2B2EB /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A0745124C34FF800C2B2EB /* Charts.framework */; };
+		15A0745D24C3672200C2B2EB /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A0745124C34FF800C2B2EB /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15A0745F24C36C2600C2B2EB /* MoodDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0745E24C36C2600C2B2EB /* MoodDatabase.swift */; };
+		15A0746124C370EE00C2B2EB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0746024C370EE00C2B2EB /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				15A0745D24C3672200C2B2EB /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +83,8 @@
 		15A0743124C32CBA00C2B2EB /* moods.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = moods.db; sourceTree = "<group>"; };
 		15A0743324C32CC600C2B2EB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		15A0744B24C34FF800C2B2EB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-3.5.0/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		15A0745E24C36C2600C2B2EB /* MoodDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDatabase.swift; sourceTree = "<group>"; };
+		15A0746024C370EE00C2B2EB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A0743424C32CC600C2B2EB /* libsqlite3.tbd in Frameworks */,
+				15A0745C24C3672200C2B2EB /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,28 +120,20 @@
 		15A0740924C32C1400C2B2EB /* MoodyBear */ = {
 			isa = PBXGroup;
 			children = (
+				15A0746224C370FF00C2B2EB /* FMDB Files */,
 				15A0744B24C34FF800C2B2EB /* Charts.xcodeproj */,
 				15A0740A24C32C1400C2B2EB /* AppDelegate.swift */,
 				15A0740C24C32C1400C2B2EB /* SceneDelegate.swift */,
-				15A0740E24C32C1400C2B2EB /* DataEntryController.swift */,
-				15A0741024C32C1400C2B2EB /* ChartViewController.swift */,
-				15A0741224C32C1400C2B2EB /* Main.storyboard */,
 				15A0741524C32C1600C2B2EB /* Assets.xcassets */,
 				15A0741724C32C1600C2B2EB /* LaunchScreen.storyboard */,
 				15A0741A24C32C1600C2B2EB /* Info.plist */,
-				15A0742B24C32CA500C2B2EB /* FMDatabase.h */,
-				15A0742524C32CA500C2B2EB /* FMDatabase.m */,
-				15A0742A24C32CA500C2B2EB /* FMDatabaseAdditions.h */,
-				15A0742824C32CA500C2B2EB /* FMDatabaseAdditions.m */,
-				15A0742724C32CA500C2B2EB /* FMDatabasePool.h */,
-				15A0742924C32CA500C2B2EB /* FMDatabasePool.m */,
-				15A0742324C32CA500C2B2EB /* FMDatabaseQueue.h */,
-				15A0742424C32CA500C2B2EB /* FMDatabaseQueue.m */,
-				15A0742124C32CA500C2B2EB /* FMDB.h */,
-				15A0742624C32CA500C2B2EB /* FMResultSet.h */,
-				15A0742224C32CA500C2B2EB /* FMResultSet.m */,
 				15A0742024C32CA400C2B2EB /* MoodyBear-Bridging-Header.h */,
 				15A0743124C32CBA00C2B2EB /* moods.db */,
+				15A0741224C32C1400C2B2EB /* Main.storyboard */,
+				15A0745E24C36C2600C2B2EB /* MoodDatabase.swift */,
+				15A0741024C32C1400C2B2EB /* ChartViewController.swift */,
+				15A0740E24C32C1400C2B2EB /* DataEntryController.swift */,
+				15A0746024C370EE00C2B2EB /* DetailViewController.swift */,
 			);
 			path = MoodyBear;
 			sourceTree = "<group>";
@@ -153,6 +153,24 @@
 				15A0745324C34FF800C2B2EB /* ChartsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		15A0746224C370FF00C2B2EB /* FMDB Files */ = {
+			isa = PBXGroup;
+			children = (
+				15A0742B24C32CA500C2B2EB /* FMDatabase.h */,
+				15A0742524C32CA500C2B2EB /* FMDatabase.m */,
+				15A0742A24C32CA500C2B2EB /* FMDatabaseAdditions.h */,
+				15A0742824C32CA500C2B2EB /* FMDatabaseAdditions.m */,
+				15A0742724C32CA500C2B2EB /* FMDatabasePool.h */,
+				15A0742924C32CA500C2B2EB /* FMDatabasePool.m */,
+				15A0742324C32CA500C2B2EB /* FMDatabaseQueue.h */,
+				15A0742424C32CA500C2B2EB /* FMDatabaseQueue.m */,
+				15A0742124C32CA500C2B2EB /* FMDB.h */,
+				15A0742624C32CA500C2B2EB /* FMResultSet.h */,
+				15A0742224C32CA500C2B2EB /* FMResultSet.m */,
+			);
+			path = "FMDB Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A0746124C370EE00C2B2EB /* DetailViewController.swift in Sources */,
 				15A0741124C32C1400C2B2EB /* ChartViewController.swift in Sources */,
 				15A0740F24C32C1400C2B2EB /* DataEntryController.swift in Sources */,
 				15A0740B24C32C1400C2B2EB /* AppDelegate.swift in Sources */,
@@ -261,6 +280,7 @@
 				15A0742C24C32CA500C2B2EB /* FMResultSet.m in Sources */,
 				15A0742D24C32CA500C2B2EB /* FMDatabaseQueue.m in Sources */,
 				15A0742F24C32CA500C2B2EB /* FMDatabaseAdditions.m in Sources */,
+				15A0745F24C36C2600C2B2EB /* MoodDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
