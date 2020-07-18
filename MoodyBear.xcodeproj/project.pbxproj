@@ -10,7 +10,7 @@
 		15A0740B24C32C1400C2B2EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0740A24C32C1400C2B2EB /* AppDelegate.swift */; };
 		15A0740D24C32C1400C2B2EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0740C24C32C1400C2B2EB /* SceneDelegate.swift */; };
 		15A0740F24C32C1400C2B2EB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0740E24C32C1400C2B2EB /* FirstViewController.swift */; };
-		15A0741124C32C1400C2B2EB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0741024C32C1400C2B2EB /* SecondViewController.swift */; };
+		15A0741124C32C1400C2B2EB /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0741024C32C1400C2B2EB /* ChartViewController.swift */; };
 		15A0741424C32C1400C2B2EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A0741224C32C1400C2B2EB /* Main.storyboard */; };
 		15A0741624C32C1600C2B2EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A0741524C32C1600C2B2EB /* Assets.xcassets */; };
 		15A0741924C32C1600C2B2EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A0741724C32C1600C2B2EB /* LaunchScreen.storyboard */; };
@@ -23,12 +23,42 @@
 		15A0743524C32CCD00C2B2EB /* moods.db in Resources */ = {isa = PBXBuildFile; fileRef = 15A0743124C32CBA00C2B2EB /* moods.db */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		15A0745024C34FF800C2B2EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15A0744B24C34FF800C2B2EB /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		15A0745224C34FF800C2B2EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15A0744B24C34FF800C2B2EB /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		15A0744124C34A9D00C2B2EB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		15A0740724C32C1400C2B2EB /* MoodyBear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodyBear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A0740A24C32C1400C2B2EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15A0740C24C32C1400C2B2EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		15A0740E24C32C1400C2B2EB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		15A0741024C32C1400C2B2EB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		15A0741024C32C1400C2B2EB /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		15A0741324C32C1400C2B2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15A0741524C32C1600C2B2EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15A0741824C32C1600C2B2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +77,7 @@
 		15A0742B24C32CA500C2B2EB /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		15A0743124C32CBA00C2B2EB /* moods.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = moods.db; sourceTree = "<group>"; };
 		15A0743324C32CC600C2B2EB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		15A0744B24C34FF800C2B2EB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-3.5.0/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +112,11 @@
 		15A0740924C32C1400C2B2EB /* MoodyBear */ = {
 			isa = PBXGroup;
 			children = (
+				15A0744B24C34FF800C2B2EB /* Charts.xcodeproj */,
 				15A0740A24C32C1400C2B2EB /* AppDelegate.swift */,
 				15A0740C24C32C1400C2B2EB /* SceneDelegate.swift */,
 				15A0740E24C32C1400C2B2EB /* FirstViewController.swift */,
-				15A0741024C32C1400C2B2EB /* SecondViewController.swift */,
+				15A0741024C32C1400C2B2EB /* ChartViewController.swift */,
 				15A0741224C32C1400C2B2EB /* Main.storyboard */,
 				15A0741524C32C1600C2B2EB /* Assets.xcassets */,
 				15A0741724C32C1600C2B2EB /* LaunchScreen.storyboard */,
@@ -114,6 +146,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		15A0744C24C34FF800C2B2EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15A0745124C34FF800C2B2EB /* Charts.framework */,
+				15A0745324C34FF800C2B2EB /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,6 +165,7 @@
 				15A0740324C32C1400C2B2EB /* Sources */,
 				15A0740424C32C1400C2B2EB /* Frameworks */,
 				15A0740524C32C1400C2B2EB /* Resources */,
+				15A0744124C34A9D00C2B2EB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,12 +203,35 @@
 			mainGroup = 15A073FE24C32C1400C2B2EB;
 			productRefGroup = 15A0740824C32C1400C2B2EB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 15A0744C24C34FF800C2B2EB /* Products */;
+					ProjectRef = 15A0744B24C34FF800C2B2EB /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				15A0740624C32C1400C2B2EB /* MoodyBear */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		15A0745124C34FF800C2B2EB /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 15A0745024C34FF800C2B2EB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		15A0745324C34FF800C2B2EB /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 15A0745224C34FF800C2B2EB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		15A0740524C32C1400C2B2EB /* Resources */ = {
@@ -187,7 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15A0741124C32C1400C2B2EB /* SecondViewController.swift in Sources */,
+				15A0741124C32C1400C2B2EB /* ChartViewController.swift in Sources */,
 				15A0740F24C32C1400C2B2EB /* FirstViewController.swift in Sources */,
 				15A0740B24C32C1400C2B2EB /* AppDelegate.swift in Sources */,
 				15A0742E24C32CA500C2B2EB /* FMDatabase.m in Sources */,
