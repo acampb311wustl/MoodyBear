@@ -61,10 +61,10 @@ class MoodDatabase {
     
     func getNumRows() -> Int {
         do {
-            let results = try moodDB.executeQuery("SELECT COUNT(*) FROM moodHistory", values: nil)
+            let results = try moodDB.executeQuery("SELECT COUNT(*) as Count FROM moodHistory", values: nil)
             
             while (results.next()) {
-                print(results)
+
                 return Int(results.int(forColumn: "Count"))
             }
         } catch let error as NSError {
