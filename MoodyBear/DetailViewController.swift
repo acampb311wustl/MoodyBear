@@ -11,6 +11,9 @@ import UIKit
 class DetailViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var detailTableView: UITableView!
+    
+    var dataCache : [Mood] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,17 +22,31 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         detailTableView.dataSource = self
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MoodDatabase.db.getNumRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "theCell")! as UITableViewCell
-        let myArray = MoodDatabase.db.selectAllFromDatabase()
-        myCell.textLabel!.text = myArray[indexPath.row].description
+        dataCache = MoodDatabase.db.selectAllFromDatabase()
+        myCell.textLabel!.text = dataCache[indexPath.row].description
         
         return myCell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            MoodDatabase.db.deleteWithId(id: dataCache[indexPath.row].id)
+            dataCache = MoodDatabase.db.selectAllFromDatabase()
+            detailTableView.reloadData()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        detailTableView.reloadData()
+    }
 }
