@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  MoodyBear
 //
-//  Created by Adam Campbell on 7/18/20.
+//  Created by Team Moody Bear on 7/18/20.
 //  Copyright © 2020 Team Moody Bear. All rights reserved.
 //
 
