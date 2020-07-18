@@ -130,7 +130,7 @@
         <scene sceneID="jPq-Qg-bZi">
             <objects>
                 <viewController id="MMe-Ig-El1" customClass="DetailViewController" customModule="MoodyBear" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wc3-Zo-Iu3" customClass="Details">
+                    <view key="view" contentMode="scaleToFill" id="wc3-Zo-Iu3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
