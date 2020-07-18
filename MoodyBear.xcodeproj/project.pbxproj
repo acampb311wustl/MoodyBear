@@ -14,6 +14,13 @@
 		15A0741424C32C1400C2B2EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A0741224C32C1400C2B2EB /* Main.storyboard */; };
 		15A0741624C32C1600C2B2EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A0741524C32C1600C2B2EB /* Assets.xcassets */; };
 		15A0741924C32C1600C2B2EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A0741724C32C1600C2B2EB /* LaunchScreen.storyboard */; };
+		15A0742C24C32CA500C2B2EB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A0742224C32CA500C2B2EB /* FMResultSet.m */; };
+		15A0742D24C32CA500C2B2EB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A0742424C32CA500C2B2EB /* FMDatabaseQueue.m */; };
+		15A0742E24C32CA500C2B2EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A0742524C32CA500C2B2EB /* FMDatabase.m */; };
+		15A0742F24C32CA500C2B2EB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A0742824C32CA500C2B2EB /* FMDatabaseAdditions.m */; };
+		15A0743024C32CA500C2B2EB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A0742924C32CA500C2B2EB /* FMDatabasePool.m */; };
+		15A0743424C32CC600C2B2EB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A0743324C32CC600C2B2EB /* libsqlite3.tbd */; };
+		15A0743524C32CCD00C2B2EB /* moods.db in Resources */ = {isa = PBXBuildFile; fileRef = 15A0743124C32CBA00C2B2EB /* moods.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,20 @@
 		15A0741524C32C1600C2B2EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15A0741824C32C1600C2B2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15A0741A24C32C1600C2B2EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15A0742024C32CA400C2B2EB /* MoodyBear-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoodyBear-Bridging-Header.h"; sourceTree = "<group>"; };
+		15A0742124C32CA500C2B2EB /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		15A0742224C32CA500C2B2EB /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		15A0742324C32CA500C2B2EB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		15A0742424C32CA500C2B2EB /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		15A0742524C32CA500C2B2EB /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		15A0742624C32CA500C2B2EB /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		15A0742724C32CA500C2B2EB /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		15A0742824C32CA500C2B2EB /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		15A0742924C32CA500C2B2EB /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		15A0742A24C32CA500C2B2EB /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		15A0742B24C32CA500C2B2EB /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		15A0743124C32CBA00C2B2EB /* moods.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = moods.db; sourceTree = "<group>"; };
+		15A0743324C32CC600C2B2EB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A0743424C32CC600C2B2EB /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +66,7 @@
 			children = (
 				15A0740924C32C1400C2B2EB /* MoodyBear */,
 				15A0740824C32C1400C2B2EB /* Products */,
+				15A0743224C32CC600C2B2EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +89,29 @@
 				15A0741524C32C1600C2B2EB /* Assets.xcassets */,
 				15A0741724C32C1600C2B2EB /* LaunchScreen.storyboard */,
 				15A0741A24C32C1600C2B2EB /* Info.plist */,
+				15A0742B24C32CA500C2B2EB /* FMDatabase.h */,
+				15A0742524C32CA500C2B2EB /* FMDatabase.m */,
+				15A0742A24C32CA500C2B2EB /* FMDatabaseAdditions.h */,
+				15A0742824C32CA500C2B2EB /* FMDatabaseAdditions.m */,
+				15A0742724C32CA500C2B2EB /* FMDatabasePool.h */,
+				15A0742924C32CA500C2B2EB /* FMDatabasePool.m */,
+				15A0742324C32CA500C2B2EB /* FMDatabaseQueue.h */,
+				15A0742424C32CA500C2B2EB /* FMDatabaseQueue.m */,
+				15A0742124C32CA500C2B2EB /* FMDB.h */,
+				15A0742624C32CA500C2B2EB /* FMResultSet.h */,
+				15A0742224C32CA500C2B2EB /* FMResultSet.m */,
+				15A0742024C32CA400C2B2EB /* MoodyBear-Bridging-Header.h */,
+				15A0743124C32CBA00C2B2EB /* moods.db */,
 			);
 			path = MoodyBear;
+			sourceTree = "<group>";
+		};
+		15A0743224C32CC600C2B2EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15A0743324C32CC600C2B2EB /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +146,7 @@
 				TargetAttributes = {
 					15A0740624C32C1400C2B2EB = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -128,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A0743524C32CCD00C2B2EB /* moods.db in Resources */,
 				15A0741924C32C1600C2B2EB /* LaunchScreen.storyboard in Resources */,
 				15A0741624C32C1600C2B2EB /* Assets.xcassets in Resources */,
 				15A0741424C32C1400C2B2EB /* Main.storyboard in Resources */,
@@ -144,7 +190,12 @@
 				15A0741124C32C1400C2B2EB /* SecondViewController.swift in Sources */,
 				15A0740F24C32C1400C2B2EB /* FirstViewController.swift in Sources */,
 				15A0740B24C32C1400C2B2EB /* AppDelegate.swift in Sources */,
+				15A0742E24C32CA500C2B2EB /* FMDatabase.m in Sources */,
+				15A0743024C32CA500C2B2EB /* FMDatabasePool.m in Sources */,
 				15A0740D24C32C1400C2B2EB /* SceneDelegate.swift in Sources */,
+				15A0742C24C32CA500C2B2EB /* FMResultSet.m in Sources */,
+				15A0742D24C32CA500C2B2EB /* FMDatabaseQueue.m in Sources */,
+				15A0742F24C32CA500C2B2EB /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2EP8JFX8SL;
 				INFOPLIST_FILE = MoodyBear/Info.plist;
@@ -297,6 +349,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.moodybear.wustl.edu.MoodyBear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MoodyBear/MoodyBear-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -306,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2EP8JFX8SL;
 				INFOPLIST_FILE = MoodyBear/Info.plist;
@@ -315,6 +370,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.moodybear.wustl.edu.MoodyBear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MoodyBear/MoodyBear-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
