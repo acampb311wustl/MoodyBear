@@ -14,6 +14,11 @@ struct Mood {
     var id : Int
 }
 
+struct Tag {
+    var tagName : String
+    var moodId : Int
+}
+
 func getMoodFromQueryResults(queryResult: FMResultSet) -> Mood {
     var tempMood : Mood = Mood(description: "",level: 0,id: 0)
     tempMood.description = queryResult.string(forColumn: "description") ?? ""
