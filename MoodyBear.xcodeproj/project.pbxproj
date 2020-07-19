@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156840BE24C4902B0025A519 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156840B924C4902B0025A519 /* CloseButton.swift */; };
+		156840BF24C4902B0025A519 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156840BB24C4902B0025A519 /* TagListView.swift */; };
+		156840C024C4902B0025A519 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156840BC24C4902B0025A519 /* TagView.swift */; };
 		15A0740B24C32C1400C2B2EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0740A24C32C1400C2B2EB /* AppDelegate.swift */; };
 		15A0740D24C32C1400C2B2EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0740C24C32C1400C2B2EB /* SceneDelegate.swift */; };
 		15A0740F24C32C1400C2B2EB /* DataEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0740E24C32C1400C2B2EB /* DataEntryController.swift */; };
@@ -59,6 +62,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		156840B924C4902B0025A519 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		156840BA24C4902B0025A519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		156840BB24C4902B0025A519 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		156840BC24C4902B0025A519 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		156840BD24C4902B0025A519 /* TagListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagListView.h; sourceTree = "<group>"; };
 		15A0740724C32C1400C2B2EB /* MoodyBear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodyBear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A0740A24C32C1400C2B2EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15A0740C24C32C1400C2B2EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +108,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156840C224C4944F0025A519 /* TagViewLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				156840B924C4902B0025A519 /* CloseButton.swift */,
+				156840BA24C4902B0025A519 /* Info.plist */,
+				156840BD24C4902B0025A519 /* TagListView.h */,
+				156840BB24C4902B0025A519 /* TagListView.swift */,
+				156840BC24C4902B0025A519 /* TagView.swift */,
+			);
+			path = TagViewLibrary;
+			sourceTree = "<group>";
+		};
 		15A073FE24C32C1400C2B2EB = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +140,7 @@
 		15A0740924C32C1400C2B2EB /* MoodyBear */ = {
 			isa = PBXGroup;
 			children = (
+				156840C224C4944F0025A519 /* TagViewLibrary */,
 				15A0746224C370FF00C2B2EB /* FMDB Files */,
 				15A0744B24C34FF800C2B2EB /* Charts.xcodeproj */,
 				15A0740A24C32C1400C2B2EB /* AppDelegate.swift */,
@@ -276,9 +297,12 @@
 				15A0740B24C32C1400C2B2EB /* AppDelegate.swift in Sources */,
 				15A0742E24C32CA500C2B2EB /* FMDatabase.m in Sources */,
 				15A0743024C32CA500C2B2EB /* FMDatabasePool.m in Sources */,
+				156840BE24C4902B0025A519 /* CloseButton.swift in Sources */,
 				15A0740D24C32C1400C2B2EB /* SceneDelegate.swift in Sources */,
 				15A0742C24C32CA500C2B2EB /* FMResultSet.m in Sources */,
 				15A0742D24C32CA500C2B2EB /* FMDatabaseQueue.m in Sources */,
+				156840BF24C4902B0025A519 /* TagListView.swift in Sources */,
+				156840C024C4902B0025A519 /* TagView.swift in Sources */,
 				15A0742F24C32CA500C2B2EB /* FMDatabaseAdditions.m in Sources */,
 				15A0745F24C36C2600C2B2EB /* MoodDatabase.swift in Sources */,
 			);

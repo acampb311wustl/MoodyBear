@@ -7,13 +7,26 @@
 //
 
 import UIKit
+//import TagListView
 
 class DataEntryController: UIViewController {
     @IBOutlet weak var moodLevelSlider: UISlider!
     @IBOutlet weak var moodDetailsField: UITextView!
+    @IBOutlet weak var tagListView: TagListView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tagListView.textFont = UIFont.systemFont(ofSize: 24)
+        tagListView.alignment = .center // possible values are [.leading, .trailing, .left, .center, .right]
+
+        tagListView.addTag("TagListView")
+        tagListView.addTags(["Add", "two", "tags"])
+
+
+        //tagListView.setTitle("New Title", at: 6) // to replace the title a tag
+
     }
     
     

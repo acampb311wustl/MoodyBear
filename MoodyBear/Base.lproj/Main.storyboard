@@ -65,18 +65,37 @@
                                     </slider>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbc-1L-eaC" customClass="TagListView" customModule="MoodyBear" customModuleProvider="target">
+                                <rect key="frame" x="75" y="102" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="7hh-1w-UBO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                        <color key="value" red="0.3935393989" green="0.55022311209999997" blue="0.87454456089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Cdx-Ki-Jzl" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="5hV-Y0-hrN"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="KnP-59-6tB" secondAttribute="bottom" constant="20" id="5tw-Gk-AD8"/>
                             <constraint firstItem="p2J-fU-Nmr" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="6KY-GB-ci7"/>
+                            <constraint firstItem="Pbc-1L-eaC" firstAttribute="firstBaseline" secondItem="Cdx-Ki-Jzl" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="8dH-S6-D0w"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="y3v-Vz-nhj" secondAttribute="trailing" constant="288.5" id="9dM-Fn-FLk"/>
                             <constraint firstItem="KnP-59-6tB" firstAttribute="top" secondItem="p2J-fU-Nmr" secondAttribute="bottom" constant="20" id="Bem-Bl-9XT"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Pbc-1L-eaC" secondAttribute="trailing" constant="99" id="LJu-Ks-UW6"/>
                             <constraint firstItem="KnP-59-6tB" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="MKt-5e-WMX"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="KnP-59-6tB" secondAttribute="trailing" id="XdE-xG-vze"/>
                             <constraint firstItem="y3v-Vz-nhj" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="aSz-Mx-Hza"/>
                             <constraint firstItem="Cdx-Ki-Jzl" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="gl1-xT-dD4"/>
+                            <constraint firstItem="Pbc-1L-eaC" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="75" id="iNa-N5-R6V"/>
                             <constraint firstItem="p2J-fU-Nmr" firstAttribute="top" secondItem="y3v-Vz-nhj" secondAttribute="bottom" constant="10" id="pf6-WN-PCV"/>
                             <constraint firstItem="Cdx-Ki-Jzl" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" constant="-20" id="qap-yt-J9U"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="p2J-fU-Nmr" secondAttribute="trailing" constant="20" id="uku-tA-OO3"/>
@@ -87,6 +106,7 @@
                     <connections>
                         <outlet property="moodDetailsField" destination="p2J-fU-Nmr" id="AmA-5M-aRY"/>
                         <outlet property="moodLevelSlider" destination="gUm-oP-Zia" id="98b-VN-NQA"/>
+                        <outlet property="tagListView" destination="Pbc-1L-eaC" id="KLV-D7-Sii"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
