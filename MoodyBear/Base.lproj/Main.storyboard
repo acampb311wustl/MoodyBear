@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p2J-fU-Nmr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p2J-fU-Nmr">
                                 <rect key="frame" x="20" y="201" width="374" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -56,7 +56,7 @@
                                     </slider>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbc-1L-eaC" customClass="TagListView" customModule="MoodyBear" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pbc-1L-eaC" customClass="TagListView" customModule="MoodyBear" customModuleProvider="target">
                                 <rect key="frame" x="20" y="102" width="374" height="16"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -69,7 +69,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KrA-nC-xKf" userLabel="addMoodTag">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KrA-nC-xKf" userLabel="addMoodTag">
                                 <rect key="frame" x="20" y="126" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Tag:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pR3-dx-gHm">
@@ -141,18 +141,47 @@
                                     <constraint firstAttribute="height" constant="250" id="JtL-fJ-45P"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bek-9j-gFo" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="53" width="414" height="250"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="xkl-k3-gZi"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gip-ha-1NN">
+                                <rect key="frame" x="286" y="30" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-6w-fPP" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="308" width="414" height="250"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="a4C-tW-OVP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="WsA-6w-fPP" firstAttribute="top" secondItem="Bek-9j-gFo" secondAttribute="bottom" constant="5" id="6Vv-bb-eTA"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="WsA-6w-fPP" secondAttribute="trailing" id="H3z-8h-UoY"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="s5J-xn-ffL" secondAttribute="trailing" id="Mhl-Nw-Piw"/>
+                            <constraint firstItem="Bek-9j-gFo" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="UYE-kh-YCq"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Bek-9j-gFo" secondAttribute="trailing" id="dNj-7W-Tci"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="s5J-xn-ffL" secondAttribute="bottom" id="hQf-PN-Rju"/>
+                            <constraint firstItem="WsA-6w-fPP" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="kAa-LN-6k6"/>
                             <constraint firstItem="s5J-xn-ffL" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="sK6-bR-4cl"/>
+                            <constraint firstItem="s5J-xn-ffL" firstAttribute="top" secondItem="WsA-6w-fPP" secondAttribute="bottom" constant="5" id="vYa-a1-zCQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Overview" image="chart.pie.fill" catalog="system" selectedImage="chart.pie.fill" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="barChart" destination="s5J-xn-ffL" id="9rb-8y-n06"/>
+                        <outlet property="frequencyChart" destination="Bek-9j-gFo" id="Mu1-Gd-krK"/>
+                        <outlet property="pieChart" destination="WsA-6w-fPP" id="qIi-T0-w90"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
