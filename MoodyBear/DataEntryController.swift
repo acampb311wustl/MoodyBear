@@ -26,6 +26,7 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     
     @IBOutlet weak var completedQuestionaireLabel: UILabel!
     @IBOutlet weak var questionStack: UIStackView!
+    var tagList: [String] = []
     @IBAction func buttonClick(_ sender: AnyObject) {
         //Check the users input
         var yes = 0
@@ -98,6 +99,8 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         if let tempText = newTagTextField.text
         {
             tagListView.addTag(tempText)
+            tagList.append(tempText)
+            print(tagList)
         }
     }
     
@@ -119,11 +122,25 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     }
     
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        tagListView.removeTag(title) // all tags with title “meow” will be removed
+    
+        print("title is \(title)")
+        let length = tagList.count
+        print("length is \(length)")
+        for i in 0..<length {
+            print(i)
+            print("tag list at this point is \(tagList[i])")
+//            if tagList[i].contains(title){
+//                tagList.remove(at: i)
+//                print("title removed is \(title) at \(i)")
+//            }
+        }
+            tagListView.removeTag(title) // all tags with title “meow” will be removed
     }
     
     //Questions and Answers for Questionaire
-    let questions = ["I am content right now?", "I spent enough time outside today?", "If my food order was missing items, I would be angry", "I am not having postive thoughts right now","I feel motivated","I am enthusiastic right now","I feel overwhelmed"]
+    let questions = ["I ate well today", "I spent enough time outside today", "If my food order was missing items, I would not be angry", "I am not having postive thoughts right now","I feel motivated","I am enthusiastic right now","I feel relaxed and not stressed"]
+    //graphing categories- time outside, eating, motivation, relaxation, anger
+    //1 is negative, 5 is positive 
     let answers = [["Definitely", "somewhat agree", "not sure", "not really", "No way"]]
     
     var currentQuestion = 0
