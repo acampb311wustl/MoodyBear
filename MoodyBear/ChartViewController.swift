@@ -9,48 +9,73 @@
 import UIKit
 import Charts
 
-class ChartViewController: UIViewController {
-    @IBOutlet weak var number1: UISlider!
-    @IBOutlet weak var number2: UISlider!
-    @IBOutlet weak var number3: UISlider!
-    @IBOutlet weak var barChart: LineChartView!
+class ChartViewController: UIViewController, UIScrollViewDelegate {
+    //    @IBOutlet weak var number1: UISlider!
+    //    @IBOutlet weak var number2: UISlider!
+    //    @IBOutlet weak var number3: UISlider!
+
+    @IBOutlet var lineChart: LineChartView!
+    //    var barChart: LineChartView!
     
-//    @IBOutlet var pieChart: LineChartView!
-//    @IBOutlet var frequencyChart: LineChartView!
+    //    @IBOutlet var pieChart: LineChartView!
+    //    @IBOutlet var frequencyChart: LineChartView!
     
+    
+    
+    
+    
+    
+    //TODO once getting real data:
+    
+    // make scroll view and append graphs
+    // make weekly / total graphs
+    // create histogram of tagged values
+    // add pie chart for tagged values
+    //after figuring out color theme, update graphs aesthetic accordingly
+    //maybe: add graph summaries?
+    //    var barChart: LineChartView!
     @IBOutlet weak var frequencyChart: BarChartView!
     @IBOutlet weak var pieChart: PieChartView!
-    @IBAction func renderCharts() {
-        barChartUpdate()
-        frequencyChartUpdate()
-          pieChartUpdate()
-    }
+    //    @IBAction func renderCharts() {
+    //        barChartUpdate()
+    //        frequencyChartUpdate()
+    //        pieChartUpdate()
+    //    }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+//        let theFrame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+//        let scrollView = UIScrollView(frame: theFrame)
+//        //        scrollView.backgroundColor = UIColor.gray
+//        view.addSubview(scrollView)
+//        let theGraphFrame = CGRect(x: 3, y: 0, width: self.view.frame.size.width-6, height: 250)
+//        lineChart = LineChartView(frame: theGraphFrame)
+        
         // Do any additional setup after loading the view.
-        barChartUpdate()
+        lineChartUpdate()
         frequencyChartUpdate()
         pieChartUpdate()
     }
     
-    func barChartUpdate () {
+    func lineChartUpdate () {
         let currentLevels = MoodDatabase.db.selectAllFromDatabase()
-
+        
         // 1 - creating an array of data entries
         var yValues : [ChartDataEntry] = [ChartDataEntry]()
-
+        
         for i in 0 ..< currentLevels.count {
             yValues.append(ChartDataEntry(x: Double(i + 1), y: Double(currentLevels[i].level)))
         }
-
+        
         let data = LineChartData()
         let ds = LineChartDataSet(entries: yValues)
         data.addDataSet(ds)
-        barChart.data = data
-         print("this is line chart \(barChart)")
+        lineChart.data = data
+        print("this is line chart \(lineChart)")
         //This must stay at end of function
-        barChart.notifyDataSetChanged()
+        lineChart.notifyDataSetChanged()
     }
     
     func frequencyChartUpdate () {
@@ -65,9 +90,9 @@ class ChartViewController: UIViewController {
         frequencyChart.data = data
         print("this is frequency chart \(frequencyChart)")
         frequencyChart.chartDescription?.text = "Number of Widgets by Type"
-
+        
         //All other additions to this function will go here
-
+        
         //This must stay at end of function
         frequencyChart.notifyDataSetChanged()
     }
@@ -83,18 +108,18 @@ class ChartViewController: UIViewController {
         let data = PieChartData(dataSet: dataSet)
         pieChart.data = data
         pieChart.chartDescription?.text = "Share of Widgets by Type"
-
+        
         //All other additions to this function will go here
-print("this is pie chart \(pieChart)")
+        print("this is pie chart \(pieChart)")
         //This must stay at end of function
         pieChart.notifyDataSetChanged()
     }
     override func viewWillAppear(_ animated: Bool) {
-        barChartUpdate()
-           frequencyChartUpdate()
-                  pieChartUpdate()
+                lineChartUpdate()
+                   frequencyChartUpdate()
+                          pieChartUpdate()
     }
-
+    
     
 }
 
