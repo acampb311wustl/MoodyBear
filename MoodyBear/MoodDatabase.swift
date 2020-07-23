@@ -51,8 +51,8 @@ class MoodDatabase {
     }
     
     func insertIntoDatabase(level: Int, description: String, food: Int, nature: Int, temperament: Int, socialization: Int, drive: Int, rest: Int, calm: Int) {
-        let query = "insert into moodHistory (level,description) values (\(level),\'\(description)\', \(food), \(nature), \(temperament), \(socialization), \(drive), \(rest), \(calm)"
-        
+        let query = "insert into moodHistory (level,description, food, nature, temperament, socialization, drive, rest, calm) values (\(level),\'\(description)\', \(food), \(nature), \(temperament), \(socialization), \(drive), \(rest), \(calm))"
+
         do {
             try moodDB.executeUpdate(query, values:nil)
             
