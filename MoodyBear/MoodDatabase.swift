@@ -11,6 +11,13 @@ import UIKit
 struct Mood {
     var description : String
     var level : Int
+    var food: Int
+    var nature: Int
+    var temperament: Int
+    var socialization: Int
+    var drive: Int
+    var rest: Int
+    var calm: Int
     var id : Int
 }
 
@@ -20,10 +27,17 @@ struct Tag {
 }
 
 func getMoodFromQueryResults(queryResult: FMResultSet) -> Mood {
-    var tempMood : Mood = Mood(description: "",level: 0,id: 0)
+    var tempMood : Mood = Mood(description: "",level: 0, food:0, nature: 0, temperament:0, socialization: 0, drive:0, rest:0, calm:0, id:0)
     tempMood.description = queryResult.string(forColumn: "description") ?? ""
     tempMood.level = Int(queryResult.int(forColumn: "level"))
     tempMood.id = Int(queryResult.int(forColumn: "id"))
+    tempMood.food = Int(queryResult.int(forColumn: "food"))
+    tempMood.nature = Int(queryResult.int(forColumn: "nature"))
+    tempMood.temperament = Int(queryResult.int(forColumn: "temperament"))
+    tempMood.socialization = Int(queryResult.int(forColumn: "socialization"))
+    tempMood.drive = Int(queryResult.int(forColumn: "drive"))
+    tempMood.rest = Int(queryResult.int(forColumn: "rest"))
+    tempMood.calm = Int(queryResult.int(forColumn: "calm"))
     return tempMood
 }
 
@@ -36,8 +50,8 @@ class MoodDatabase {
         loadDatabase()
     }
     
-    func insertIntoDatabase(level: Int, description: String) {
-        let query = "insert into moodHistory (level,description) values (\(level),\'\(description)\')"
+    func insertIntoDatabase(level: Int, description: String, food: Int, nature: Int, temperament: Int, socialization: Int, drive: Int, rest: Int, calm: Int) {
+        let query = "insert into moodHistory (level,description) values (\(level),\'\(description)\', \(food), \(nature), \(temperament), \(socialization), \(drive), \(rest), \(calm)"
         
         do {
             try moodDB.executeUpdate(query, values:nil)
