@@ -33,6 +33,7 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     @IBOutlet weak var btn4: UIButton!
     @IBOutlet weak var btn5: UIButton!
     
+    @IBOutlet var submitButton: UIButton!
     @IBOutlet weak var completedQuestionaireLabel: UILabel!
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var questionStack: UIStackView!
@@ -111,9 +112,12 @@ class DataEntryController: UIViewController, TagListViewDelegate {
             newQuestion()
         }
         else{
-            buttonStack.removeFromSuperview()
-            
-            questionLabel.text = "Question are Complete :)"
+            buttonStack.isHidden = true
+//
+//            questionLabel.text = "Question are Complete :)"
+            currentQuestion = 0
+            questionLabel.text = ""
+            submitButton.isHidden = false
             
             
         }
@@ -121,7 +125,7 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        submitButton.isHidden = true
         tagListView.delegate = self
         newQuestion()
         
@@ -146,9 +150,14 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     @IBAction func submitButtonAction(_ sender: Any) {
         let tempNum = Int(moodLevelSlider.value)
         let tempDetails = moodDetailsField.text ?? ""
-        
+                    buttonStack.isHidden = false
         MoodDatabase.db.insertIntoDatabase(level: tempNum, description: tempDetails, food: eat, nature: out, temperament: temp, socialization: social, drive: motivation, rest: sleep, calm: relax )
         print(MoodDatabase.db)
+        newQuestion()
+        moodDetailsField.text = ""
+//        newQuestion()
+        submitButton.isHidden = true
+        tagListView.removeAllTags()
     }
     
     @IBAction func clearButtonAction(_ sender: Any) {
@@ -181,9 +190,9 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     
     //Questions and Answers for Questionaire
     //<<<<<<< HEAD
-    let questions = ["I ate well today", "I spent enough time outside today", "If my food order was missing items, I would not be angry", "I spent time being social today","I feel motivated","I got enough sleep last night","I feel relaxed and not stressed"]
+    let questions = ["I ate well today", "I spent enough time outside today", "I am not angry", "I spent time being social today","I feel motivated","I got enough sleep last night","I feel relaxed and not stressed"]
     //graphing categories- eating, outside, temperament, social, motivation, sleep, relaxation
-    let answers = ["Definitely", "somewhat agree", "not sure", "not really", "No way"]
+    let answers = ["Definitely", "Maybe", "Meh", "Not really", "No way"]
     //=======
     //    let questions = ["I am content right now?", "I spent enough time outside today?", "If my food order was missing items, I would be angry", "I am not having postive thoughts right now","I feel motivated","I am enthusiastic right now","I feel overwhelmed"]
     ////    let answers = [["Definitely", "somewhat agree", "not sure", "not really", "No way"]]

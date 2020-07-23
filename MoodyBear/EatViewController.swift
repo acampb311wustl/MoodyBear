@@ -9,18 +9,14 @@
 import UIKit
 import Charts
 
-class ChartViewController: UIViewController  {
+class EatViewController: UIViewController  {
     //    @IBOutlet weak var number1: UISlider!
     //    @IBOutlet weak var number2: UISlider!
     //    @IBOutlet weak var number3: UISlider!
     var eatArray: [Int] = []
-       var outArray: [Int] = []
-       var tempArray: [Int] = []
-       var socialArray: [Int] = []
-       var motivationArray: [Int] = []
-       var sleepArray: [Int] = []
-       var relaxArray: [Int] = []
-//    var lineChart: LineChartView!
+
+    @IBOutlet var lineChart: LineChartView!
+    //    var lineChart: LineChartView!
 //    @IBOutlet var lineChart: LineChartView!
     //    var barChart: LineChartView!
     
@@ -32,7 +28,7 @@ class ChartViewController: UIViewController  {
     
 //    @IBOutlet var frequencyChart: BarChartView!
     
-    @IBOutlet var lineChart: LineChartView!
+
     
 
     //    @IBOutlet var lineChart: LineChartView!
@@ -79,11 +75,12 @@ class ChartViewController: UIViewController  {
         var yValues : [ChartDataEntry] = [ChartDataEntry]()
         print("yvalues are \(yValues)")
         for i in 0 ..< currentLevels.count {
-            yValues.append(ChartDataEntry(x: Double(i + 1), y: Double(currentLevels[i].level)))
+            yValues.append(ChartDataEntry(x: Double(i + 1), y: Double(currentLevels[i].food)))
         }
         
         let data = LineChartData()
         let ds = LineChartDataSet(entries: yValues)
+           lineChart.chartDescription?.text = "Satisfaction With Food Over Time"
         data.addDataSet(ds)
         lineChart.data = data
 //        print("this is line chart \(lineChart)")

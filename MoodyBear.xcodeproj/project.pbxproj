@@ -28,6 +28,15 @@
 		15A0745D24C3672200C2B2EB /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A0745124C34FF800C2B2EB /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15A0745F24C36C2600C2B2EB /* MoodDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0745E24C36C2600C2B2EB /* MoodDatabase.swift */; };
 		15A0746124C370EE00C2B2EB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0746024C370EE00C2B2EB /* DetailViewController.swift */; };
+		92FDAA5524C9510400FD229B /* GeneralDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA5424C9510400FD229B /* GeneralDataViewController.swift */; };
+		92FDAA5924C9516700FD229B /* Chart2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA5824C9516700FD229B /* Chart2ViewController.swift */; };
+		92FDAA5B24C95BE500FD229B /* EatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA5A24C95BE500FD229B /* EatViewController.swift */; };
+		92FDAA5D24C95E9100FD229B /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA5C24C95E9000FD229B /* SleepViewController.swift */; };
+		92FDAA5F24C95EAD00FD229B /* OutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA5E24C95EAD00FD229B /* OutViewController.swift */; };
+		92FDAA6124C95EBB00FD229B /* TemperamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA6024C95EBB00FD229B /* TemperamentViewController.swift */; };
+		92FDAA6324C95ED200FD229B /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA6224C95ED200FD229B /* SocialViewController.swift */; };
+		92FDAA6524C95EE300FD229B /* MotivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA6424C95EE300FD229B /* MotivationViewController.swift */; };
+		92FDAA6724C95EF200FD229B /* RelaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA6624C95EF200FD229B /* RelaxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +102,15 @@
 		15A0744B24C34FF800C2B2EB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-3.5.0/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		15A0745E24C36C2600C2B2EB /* MoodDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDatabase.swift; sourceTree = "<group>"; };
 		15A0746024C370EE00C2B2EB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		92FDAA5424C9510400FD229B /* GeneralDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDataViewController.swift; sourceTree = "<group>"; };
+		92FDAA5824C9516700FD229B /* Chart2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart2ViewController.swift; sourceTree = "<group>"; };
+		92FDAA5A24C95BE500FD229B /* EatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatViewController.swift; sourceTree = "<group>"; };
+		92FDAA5C24C95E9000FD229B /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
+		92FDAA5E24C95EAD00FD229B /* OutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutViewController.swift; sourceTree = "<group>"; };
+		92FDAA6024C95EBB00FD229B /* TemperamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperamentViewController.swift; sourceTree = "<group>"; };
+		92FDAA6224C95ED200FD229B /* SocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
+		92FDAA6424C95EE300FD229B /* MotivationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationViewController.swift; sourceTree = "<group>"; };
+		92FDAA6624C95EF200FD229B /* RelaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,9 +169,18 @@
 				15A0742024C32CA400C2B2EB /* MoodyBear-Bridging-Header.h */,
 				15A0743124C32CBA00C2B2EB /* moods.db */,
 				15A0741224C32C1400C2B2EB /* Main.storyboard */,
+				92FDAA5824C9516700FD229B /* Chart2ViewController.swift */,
 				15A0745E24C36C2600C2B2EB /* MoodDatabase.swift */,
 				15A0741024C32C1400C2B2EB /* ChartViewController.swift */,
+				92FDAA5424C9510400FD229B /* GeneralDataViewController.swift */,
 				15A0740E24C32C1400C2B2EB /* DataEntryController.swift */,
+				92FDAA6224C95ED200FD229B /* SocialViewController.swift */,
+				92FDAA6424C95EE300FD229B /* MotivationViewController.swift */,
+				92FDAA6624C95EF200FD229B /* RelaxViewController.swift */,
+				92FDAA5E24C95EAD00FD229B /* OutViewController.swift */,
+				92FDAA6024C95EBB00FD229B /* TemperamentViewController.swift */,
+				92FDAA5A24C95BE500FD229B /* EatViewController.swift */,
+				92FDAA5C24C95E9000FD229B /* SleepViewController.swift */,
 				15A0746024C370EE00C2B2EB /* DetailViewController.swift */,
 			);
 			path = MoodyBear;
@@ -293,18 +320,27 @@
 			files = (
 				15A0746124C370EE00C2B2EB /* DetailViewController.swift in Sources */,
 				15A0741124C32C1400C2B2EB /* ChartViewController.swift in Sources */,
+				92FDAA5524C9510400FD229B /* GeneralDataViewController.swift in Sources */,
+				92FDAA6724C95EF200FD229B /* RelaxViewController.swift in Sources */,
+				92FDAA6124C95EBB00FD229B /* TemperamentViewController.swift in Sources */,
 				15A0740F24C32C1400C2B2EB /* DataEntryController.swift in Sources */,
 				15A0740B24C32C1400C2B2EB /* AppDelegate.swift in Sources */,
+				92FDAA6524C95EE300FD229B /* MotivationViewController.swift in Sources */,
 				15A0742E24C32CA500C2B2EB /* FMDatabase.m in Sources */,
+				92FDAA5D24C95E9100FD229B /* SleepViewController.swift in Sources */,
 				15A0743024C32CA500C2B2EB /* FMDatabasePool.m in Sources */,
+				92FDAA6324C95ED200FD229B /* SocialViewController.swift in Sources */,
 				156840BE24C4902B0025A519 /* CloseButton.swift in Sources */,
+				92FDAA5924C9516700FD229B /* Chart2ViewController.swift in Sources */,
 				15A0740D24C32C1400C2B2EB /* SceneDelegate.swift in Sources */,
 				15A0742C24C32CA500C2B2EB /* FMResultSet.m in Sources */,
 				15A0742D24C32CA500C2B2EB /* FMDatabaseQueue.m in Sources */,
 				156840BF24C4902B0025A519 /* TagListView.swift in Sources */,
 				156840C024C4902B0025A519 /* TagView.swift in Sources */,
 				15A0742F24C32CA500C2B2EB /* FMDatabaseAdditions.m in Sources */,
+				92FDAA5B24C95BE500FD229B /* EatViewController.swift in Sources */,
 				15A0745F24C36C2600C2B2EB /* MoodDatabase.swift in Sources */,
+				92FDAA5F24C95EAD00FD229B /* OutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
