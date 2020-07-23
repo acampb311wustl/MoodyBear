@@ -218,18 +218,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5J-xn-ffL" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="479" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="509" width="375" height="220"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="JtL-fJ-45P"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bek-9j-gFo" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="-31" width="375" height="250"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="xkl-k3-gZi"/>
-                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gip-ha-1NN">
                                 <rect key="frame" x="286" y="30" width="73" height="21"/>
@@ -239,24 +229,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-6w-fPP" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="224" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="275" width="375" height="220"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="a4C-tW-OVP"/>
-                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bek-9j-gFo" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="44" width="375" height="220"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="WsA-6w-fPP" firstAttribute="top" secondItem="Bek-9j-gFo" secondAttribute="bottom" constant="5" id="6Vv-bb-eTA"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="WsA-6w-fPP" secondAttribute="trailing" id="H3z-8h-UoY"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="s5J-xn-ffL" secondAttribute="trailing" id="Mhl-Nw-Piw"/>
-                            <constraint firstItem="Bek-9j-gFo" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="UYE-kh-YCq"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Bek-9j-gFo" secondAttribute="trailing" id="dNj-7W-Tci"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="s5J-xn-ffL" secondAttribute="bottom" id="hQf-PN-Rju"/>
-                            <constraint firstItem="WsA-6w-fPP" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="kAa-LN-6k6"/>
-                            <constraint firstItem="s5J-xn-ffL" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="sK6-bR-4cl"/>
-                            <constraint firstItem="s5J-xn-ffL" firstAttribute="top" secondItem="WsA-6w-fPP" secondAttribute="bottom" constant="5" id="vYa-a1-zCQ"/>
+                            <constraint firstItem="Bek-9j-gFo" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="628-ST-dbu"/>
+                            <constraint firstItem="Bek-9j-gFo" firstAttribute="trailing" secondItem="WsA-6w-fPP" secondAttribute="trailing" id="6Z1-IY-niw"/>
+                            <constraint firstItem="s5J-xn-ffL" firstAttribute="top" secondItem="WsA-6w-fPP" secondAttribute="bottom" constant="14" id="7Up-eV-hXe"/>
+                            <constraint firstItem="WsA-6w-fPP" firstAttribute="top" secondItem="Bek-9j-gFo" secondAttribute="bottom" constant="11" id="ESr-tZ-X5o"/>
+                            <constraint firstItem="s5J-xn-ffL" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" constant="509" id="FZg-Wj-knu"/>
+                            <constraint firstItem="Bek-9j-gFo" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Ys2-0t-bfq"/>
+                            <constraint firstItem="s5J-xn-ffL" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="aam-3a-Swu"/>
+                            <constraint firstItem="WsA-6w-fPP" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" constant="275" id="d72-Nu-oGH"/>
+                            <constraint firstItem="Bek-9j-gFo" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="e5R-PE-P14"/>
+                            <constraint firstItem="WsA-6w-fPP" firstAttribute="leading" secondItem="s5J-xn-ffL" secondAttribute="leading" id="jdE-z0-5yN"/>
+                            <constraint firstItem="Bek-9j-gFo" firstAttribute="leading" secondItem="WsA-6w-fPP" secondAttribute="leading" id="jlG-2M-zJB"/>
+                            <constraint firstItem="WsA-6w-fPP" firstAttribute="trailing" secondItem="s5J-xn-ffL" secondAttribute="trailing" id="lop-cO-ZbL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
