@@ -37,7 +37,6 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     @IBOutlet weak var completedQuestionaireLabel: UILabel!
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var questionStack: UIStackView!
-    var tagList: [String] = []
     
     @IBAction func buttonClick(_ sender: AnyObject) {
         //Check the users input
@@ -141,8 +140,6 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         if let tempText = newTagTextField.text
         {
             tagListView.addTag(tempText)
-            tagList.append(tempText)
-            print(tagList)
         }
         newTagTextField.text = ""
     }
@@ -157,6 +154,8 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         moodDetailsField.text = ""
 //        newQuestion()
         submitButton.isHidden = true
+        
+        MoodDatabase.db.insertTagsForMood(tags: tagListView.getTagNames(), moodId:MoodDatabase.db.getIdOfLastRow())
         tagListView.removeAllTags()
           NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
@@ -165,6 +164,7 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         for temp in MoodDatabase.db.selectAllFromDatabase() {
             print(temp.description)
         }
+
     }
     
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
@@ -172,33 +172,16 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     }
     
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        
-        print("title is \(title)")
-        let length = tagList.count
-        print("length is \(length)")
-        var removeInt = 0
-        for i in 0..<length {
-            print(i)
-            print("tag list at this point is \(tagList[i])")
-            if tagList[i].contains(title){
-                print("title removed is \(title) at \(i)")
-                removeInt = i
-            }
-        }
-        tagList.remove(at: removeInt)
-        tagListView.removeTag(title) // all tags with title “meow” will be removed
+        tagListView.removeTag(title) // all tags with title will be removed
     }
     
     //Questions and Answers for Questionaire
-    //<<<<<<< HEAD
     let questions = ["I ate well today", "I spent enough time outside today", "I am not angry", "I spent time being social today","I feel motivated","I got enough sleep last night","I feel relaxed and not stressed"]
     //graphing categories- eating, outside, temperament, social, motivation, sleep, relaxation
     let answers = ["Definitely", "Maybe", "Meh", "Not really", "No way"]
-    //=======
     //    let questions = ["I am content right now?", "I spent enough time outside today?", "If my food order was missing items, I would be angry", "I am not having postive thoughts right now","I feel motivated","I am enthusiastic right now","I feel overwhelmed"]
     ////    let answers = [["Definitely", "somewhat agree", "not sure", "not really", "No way"]]
     //        let answers = [["YES!", "sure", "IDK", "not really", "NO!"]]
-    ////>>>>>>> 978fd192be65d4e849165d6c2099378323fa5371
     ////
     var currentQuestion = 0
     
@@ -233,6 +216,23 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         currentQuestion += 1
     }
     
+}
+
+extension TagListView {
+    
+    func getTagNames() -> [String] {
+        var tempTagNames : [String] = []
+        
+        self.tagViews.forEach { tag in
+            
+            if let label = tag.titleLabel?.text
+            {
+                tempTagNames.append(label)
+            }
+        }
+
+        return tempTagNames
+    }
 }
 
 
