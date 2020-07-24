@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDataSource {
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var detailTableView: UITableView!
     
@@ -20,6 +20,14 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view.
         detailTableView.register(UITableViewCell.self, forCellReuseIdentifier: "theCell")
         detailTableView.dataSource = self
+        detailTableView.delegate = self
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var asdf = MoodDatabase.db.getTagsForMood(moodId:dataCache[indexPath.row].id)
+        for temp in asdf {
+            print(temp.tagName)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -37,7 +37,6 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     @IBOutlet weak var completedQuestionaireLabel: UILabel!
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var questionStack: UIStackView!
-    var tagList: [String] = []
     
     @IBAction func buttonClick(_ sender: AnyObject) {
         //Check the users input
@@ -141,8 +140,6 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         if let tempText = newTagTextField.text
         {
             tagListView.addTag(tempText)
-            tagList.append(tempText)
-            print(tagList)
         }
         newTagTextField.text = ""
     }
@@ -157,9 +154,9 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         moodDetailsField.text = ""
 //        newQuestion()
         submitButton.isHidden = true
-        tagListView.removeAllTags()
         
-        MoodDatabase.db.insertTagsForMood(tags: tagList, moodId:MoodDatabase.db.getIdOfLastRow())
+        MoodDatabase.db.insertTagsForMood(tags: tagListView.getTagNames(), moodId:MoodDatabase.db.getIdOfLastRow())
+        tagListView.removeAllTags()
     }
     
     @IBAction func clearButtonAction(_ sender: Any) {
@@ -174,20 +171,6 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     }
     
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        
-        print("title is \(title)")
-        let length = tagList.count
-        print("length is \(length)")
-        var removeInt = 0
-        for i in 0..<length {
-            print(i)
-            print("tag list at this point is \(tagList[i])")
-            if tagList[i].contains(title){
-                print("title removed is \(title) at \(i)")
-                removeInt = i
-            }
-        }
-        tagList.remove(at: removeInt)
         tagListView.removeTag(title) // all tags with title will be removed
     }
     
@@ -232,6 +215,23 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         currentQuestion += 1
     }
     
+}
+
+extension TagListView {
+    
+    func getTagNames() -> [String] {
+        var tempTagNames : [String] = []
+        
+        self.tagViews.forEach { tag in
+            
+            if let label = tag.titleLabel?.text
+            {
+                tempTagNames.append(label)
+            }
+        }
+
+        return tempTagNames
+    }
 }
 
 
