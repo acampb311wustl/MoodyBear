@@ -23,7 +23,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MoodDatabase.db.getNumRows()
+        return MoodDatabase.db.getNumMoods()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
