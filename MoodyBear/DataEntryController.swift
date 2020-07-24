@@ -158,6 +158,7 @@ class DataEntryController: UIViewController, TagListViewDelegate {
 //        newQuestion()
         submitButton.isHidden = true
         tagListView.removeAllTags()
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     @IBAction func clearButtonAction(_ sender: Any) {
