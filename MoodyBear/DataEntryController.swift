@@ -130,10 +130,8 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         
         tagListView.textFont = UIFont.systemFont(ofSize: 18)
         tagListView.alignment = .left
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
-        tagListView.addTag(formatter.string(from: date))
+
+        tagListView.addTag("mood")
     }
     
     @IBAction func newTagAddButton(_ sender: Any) {
@@ -149,7 +147,7 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         let tempDetails = moodDetailsField.text ?? ""
                     buttonStack.isHidden = false
         MoodDatabase.db.insertIntoDatabase(level: tempNum, description: tempDetails, food: eat, nature: out, temperament: temp, socialization: social, drive: motivation, rest: sleep, calm: relax )
-        print(MoodDatabase.db)
+
         newQuestion()
         moodDetailsField.text = ""
 //        newQuestion()

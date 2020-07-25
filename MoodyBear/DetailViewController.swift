@@ -24,8 +24,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var asdf = MoodDatabase.db.getTagsForMood(moodId:dataCache[indexPath.row].id)
-        for temp in asdf {
+        for temp in MoodDatabase.db.getTagsForMood(moodId:dataCache[indexPath.row].id) {
             print(temp.tagName)
         }
     }

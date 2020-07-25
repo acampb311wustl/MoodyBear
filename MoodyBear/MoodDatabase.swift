@@ -19,6 +19,7 @@ struct Mood {
     var rest: Int
     var calm: Int
     var id : Int
+    var date : Date
 }
 
 struct Tag {
@@ -27,7 +28,7 @@ struct Tag {
 }
 
 func getMoodFromQueryResults(queryResult: FMResultSet) -> Mood {
-    var tempMood : Mood = Mood(description: "",level: 0, food:0, nature: 0, temperament:0, socialization: 0, drive:0, rest:0, calm:0, id:0)
+    var tempMood : Mood = Mood(description: "",level: 0, food:0, nature: 0, temperament:0, socialization: 0, drive:0, rest:0, calm:0, id:0, date: Date())
     tempMood.description = queryResult.string(forColumn: "description") ?? ""
     tempMood.level = Int(queryResult.int(forColumn: "level"))
     tempMood.id = Int(queryResult.int(forColumn: "id"))
@@ -38,6 +39,10 @@ func getMoodFromQueryResults(queryResult: FMResultSet) -> Mood {
     tempMood.drive = Int(queryResult.int(forColumn: "drive"))
     tempMood.rest = Int(queryResult.int(forColumn: "rest"))
     tempMood.calm = Int(queryResult.int(forColumn: "calm"))
+    let inputFormatter = DateFormatter()
+    inputFormatter.dateFormat = "MM/dd/yyyy"
+    let dayCol = queryResult.string(forColumn: "day") ?? ""
+    tempMood.date = inputFormatter.date(from: dayCol) ?? Date()
     return tempMood
 }
 
@@ -74,11 +79,16 @@ class MoodDatabase {
     ///   - drive: drive
     ///   - rest: rest
     ///   - calm: calm
-    func insertIntoDatabase(level: Int, description: String, food: Int, nature: Int, temperament: Int, socialization: Int, drive: Int, rest: Int, calm: Int){
-        let query = "INSERT INTO moodHistory (level,description, food, nature, temperament, socialization, drive, rest, calm) VALUES (?,?,?,?,?, ?,?,?,?)"
+    func insertIntoDatabase(level: Int, description: String, food: Int, nature: Int, temperament: Int, socialization: Int, drive: Int, rest: Int, calm: Int) {
+        let query = "INSERT INTO moodHistory (level,description, food, nature, temperament, socialization, drive, rest, calm, day) VALUES (?,?,?,?,?, ?,?,?,?,?)"
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let today = formatter.string(from: date);
         
         do {
-            try moodDB.executeUpdate(query, values:[level, description, food, nature, temperament, socialization, drive, rest, calm])
+            try moodDB.executeUpdate(query, values:[level, description, food, nature, temperament, socialization, drive, rest, calm, today])
             
         } catch let error as NSError {
             print("db error \(error)")
