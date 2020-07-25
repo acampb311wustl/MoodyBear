@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "TagListView.getTagNames():DataEntryController.swift">
+      </ContextState>
+      <ContextState
          contextName = "DataEntryController.submitButtonAction(_:):DataEntryController.swift">
          <PersistentStrings>
             <PersistentString
@@ -12,6 +15,17 @@
                value = "moodLevelSlider.value">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailViewController.tableView(_:didSelectRowAt:):DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "getMoodFromQueryResults(queryResult:):MoodDatabase.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

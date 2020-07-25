@@ -10,6 +10,8 @@
 		156840BE24C4902B0025A519 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156840B924C4902B0025A519 /* CloseButton.swift */; };
 		156840BF24C4902B0025A519 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156840BB24C4902B0025A519 /* TagListView.swift */; };
 		156840C024C4902B0025A519 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156840BC24C4902B0025A519 /* TagView.swift */; };
+		156A76B224CBBEDB00B0717F /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156A76B024CBBEDB00B0717F /* EditViewController.swift */; };
+		156A76B324CBBEDB00B0717F /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156A76B124CBBEDB00B0717F /* EditViewController.xib */; };
 		15A0740B24C32C1400C2B2EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0740A24C32C1400C2B2EB /* AppDelegate.swift */; };
 		15A0740D24C32C1400C2B2EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0740C24C32C1400C2B2EB /* SceneDelegate.swift */; };
 		15A0740F24C32C1400C2B2EB /* DataEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0740E24C32C1400C2B2EB /* DataEntryController.swift */; };
@@ -78,6 +80,8 @@
 		156840BB24C4902B0025A519 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		156840BC24C4902B0025A519 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		156840BD24C4902B0025A519 /* TagListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagListView.h; sourceTree = "<group>"; };
+		156A76B024CBBEDB00B0717F /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		156A76B124CBBEDB00B0717F /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 		15A0740724C32C1400C2B2EB /* MoodyBear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodyBear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A0740A24C32C1400C2B2EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15A0740C24C32C1400C2B2EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				92FDAA5A24C95BE500FD229B /* EatViewController.swift */,
 				92FDAA5C24C95E9000FD229B /* SleepViewController.swift */,
 				15A0746024C370EE00C2B2EB /* DetailViewController.swift */,
+				156A76B024CBBEDB00B0717F /* EditViewController.swift */,
+				156A76B124CBBEDB00B0717F /* EditViewController.xib */,
 			);
 			path = MoodyBear;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 			files = (
 				15A0743524C32CCD00C2B2EB /* moods.db in Resources */,
 				15A0741924C32C1600C2B2EB /* LaunchScreen.storyboard in Resources */,
+				156A76B324CBBEDB00B0717F /* EditViewController.xib in Resources */,
 				15A0741624C32C1600C2B2EB /* Assets.xcassets in Resources */,
 				15A0741424C32C1400C2B2EB /* Main.storyboard in Resources */,
 			);
@@ -324,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156A76B224CBBEDB00B0717F /* EditViewController.swift in Sources */,
 				15A0746124C370EE00C2B2EB /* DetailViewController.swift in Sources */,
 				15A0741124C32C1400C2B2EB /* ChartViewController.swift in Sources */,
 				92FDAA5524C9510400FD229B /* GeneralDataViewController.swift in Sources */,

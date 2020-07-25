@@ -24,9 +24,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        for temp in MoodDatabase.db.getTagsForMood(moodId:dataCache[indexPath.row].id) {
-            print(temp.tagName)
-        }
+        let editView = EditViewController.initFromNib()
+        editView.mood = dataCache[indexPath.row]
+        self.present(editView, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,3 +57,14 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         detailTableView.reloadData()
     }
 }
+
+//https://stackoverflow.com/questions/27099054/load-uiviewcontroller-from-the-separate-nib-file-in-swift
+extension UIViewController {
+    static func initFromNib() -> Self {
+        func instanceFromNib<T: UIViewController>() -> T {
+            return T(nibName: String(describing: self), bundle: nil)
+        }
+        return instanceFromNib()
+    }
+}
+
