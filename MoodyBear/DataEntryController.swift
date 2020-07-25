@@ -155,6 +155,7 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         
         MoodDatabase.db.insertTagsForMood(tags: tagListView.getTagNames(), moodId:MoodDatabase.db.getIdOfLastRow())
         tagListView.removeAllTags()
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     @IBAction func clearButtonAction(_ sender: Any) {

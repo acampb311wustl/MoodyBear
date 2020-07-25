@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8he-Mu-qxh">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -309,14 +309,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdf-DD-Rzi">
-                                <rect key="frame" x="16" y="142" width="215" height="51"/>
+                                <rect key="frame" x="16" y="142" width="215" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxa-FN-L0w">
-                                <rect key="frame" x="16" y="209" width="230" height="132"/>
+                                <rect key="frame" x="16" y="224" width="230" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -668,10 +668,49 @@
             </objects>
             <point key="canvasLocation" x="750.72463768115949" y="1027.9017857142858"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Intro View Controller-->
+        <scene sceneID="3pd-z2-JCp">
+            <objects>
+                <viewController id="8he-Mu-qxh" customClass="IntroViewController" customModule="MoodyBear" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PRZ-yq-Hrc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home screen" translatesAutoresizingMaskIntoConstraints="NO" id="9wa-Rn-fyZ">
+                                <rect key="frame" x="-72" y="-61" width="500" height="935"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYZ-ua-GcX">
+                                <rect key="frame" x="101" y="634" width="168" height="47"/>
+                                <color key="backgroundColor" red="0.63783880609999999" green="0.86527882379999999" blue="0.96897263600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Light" family="Mukta Mahee" pointSize="35"/>
+                                <state key="normal" title="Begin"/>
+                                <connections>
+                                    <action selector="button:" destination="8he-Mu-qxh" eventType="touchUpInside" id="dKP-VA-4Ks"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9wa-Rn-fyZ" secondAttribute="trailing" constant="-69" id="0Th-aQ-A3u"/>
+                            <constraint firstItem="7LY-m5-dYp" firstAttribute="bottom" secondItem="oYZ-ua-GcX" secondAttribute="bottom" constant="97" id="0bb-Fl-HS8"/>
+                            <constraint firstItem="oYZ-ua-GcX" firstAttribute="leading" secondItem="7LY-m5-dYp" secondAttribute="leading" constant="101" id="DnY-ef-RYt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="9wa-Rn-fyZ" secondAttribute="bottom" constant="-96" id="W21-uu-c83"/>
+                            <constraint firstItem="7LY-m5-dYp" firstAttribute="trailing" secondItem="oYZ-ua-GcX" secondAttribute="trailing" constant="106" id="YOu-0L-Rjc"/>
+                            <constraint firstItem="9wa-Rn-fyZ" firstAttribute="leading" secondItem="PRZ-yq-Hrc" secondAttribute="leadingMargin" constant="-88" id="bcF-M7-zBR"/>
+                            <constraint firstItem="9wa-Rn-fyZ" firstAttribute="centerY" secondItem="PRZ-yq-Hrc" secondAttribute="centerY" id="jnQ-Ee-AAI"/>
+                            <constraint firstItem="oYZ-ua-GcX" firstAttribute="top" secondItem="7LY-m5-dYp" secondAttribute="top" constant="590" id="w2G-cx-Z6s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7LY-m5-dYp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hcl-YI-C45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-735.20000000000005" y="-38.423645320197046"/>
+        </scene>
+        <!--Tab View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" customClass="TabViewController" customModule="MoodyBear" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -709,6 +748,7 @@
     </scenes>
     <resources>
         <image name="chart.pie.fill" catalog="system" width="128" height="124"/>
+        <image name="home screen" width="1524" height="2968"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
         <image name="square.stack.3d.down.right.fill" catalog="system" width="124" height="128"/>
     </resources>
