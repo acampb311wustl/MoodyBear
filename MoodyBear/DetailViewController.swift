@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, EditViewDelegate {
 
     @IBOutlet weak var detailTableView: UITableView!
     
@@ -26,6 +26,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let editView = EditViewController.initFromNib()
         editView.mood = dataCache[indexPath.row]
+        editView.delegate = self
         self.present(editView, animated: true, completion: nil)
     }
     
@@ -56,6 +57,13 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewWillAppear(_ animated: Bool) {
         detailTableView.reloadData()
     }
+    
+    func doneEditing() {
+        dismiss(animated: true, completion: {
+            self.detailTableView.reloadData()
+        })
+    }
+  
 }
 
 //https://stackoverflow.com/questions/27099054/load-uiviewcontroller-from-the-separate-nib-file-in-swift

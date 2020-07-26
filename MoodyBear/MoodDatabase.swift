@@ -54,7 +54,6 @@ func getTagFromQueryResults(queryResult: FMResultSet) -> Tag {
     return tempTag
 }
 
-
 class MoodDatabase {
     var moodDB : FMDatabase!
     
@@ -92,6 +91,17 @@ class MoodDatabase {
             
         } catch let error as NSError {
             print("db error \(error)")
+        }
+    }
+    
+    func updateMood(level: Int, description: String, moodId: Int) {
+        let query = "UPDATE moodHistory set level=?, description=? WHERE id=?"
+        
+        do {
+            try moodDB.executeUpdate(query, values: [level,description, moodId])
+            
+        } catch let error as NSError {
+            print("Error updating mood: \(error)")
         }
     }
     
@@ -211,6 +221,17 @@ class MoodDatabase {
             } catch let error as NSError {
                 print("Error inserting tags: \(error)")
             }
+        }
+    }
+    
+    func deleteTagsForMood(moodId: Int) {
+        let query = "DELETE FROM moodTags WHERE moodId=?"
+        
+        do {
+            try moodDB.executeUpdate(query, values:[moodId])
+            
+        } catch let error as NSError {
+            print("Error deleting tags: \(error)")
         }
     }
 }

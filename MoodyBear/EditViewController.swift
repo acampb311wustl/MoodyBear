@@ -15,6 +15,7 @@ class EditViewController: UIViewController, TagListViewDelegate {
     @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var moodDetailTextView: UITextView!
     @IBOutlet weak var tagTextField: UITextField!
+    weak var delegate: EditViewDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,20 @@ class EditViewController: UIViewController, TagListViewDelegate {
         tagTextField.text = ""
     }
     
+    @IBAction func updateButtonPressed(_ sender: Any) {
+        let tempNum = Int(moodLevelSlider.value)
+        let tempDetails = moodDetailTextView.text ?? ""
+        MoodDatabase.db.updateMood(level: tempNum, description: tempDetails, moodId: mood.id)
+        MoodDatabase.db.deleteTagsForMood(moodId: mood.id)
+        MoodDatabase.db.insertTagsForMood(tags: tagListView.getTagNames(), moodId: mood.id)
+        delegate?.doneEditing()
+    }
+    
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         tagListView.removeTag(title) // all tags with title will be removed
     }
+}
+
+protocol EditViewDelegate: class {
+    func doneEditing()
 }
