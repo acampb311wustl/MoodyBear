@@ -44,7 +44,6 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="329" id="Kx4-dy-Uwv"/>
                     </constraints>
-                    <string key="text">Personal Entry: You can talk about whatever you what! It is YOUR personal moody check-ins :) Talk about things you were excited about that day, things that happened, what's on your mind, what you spent your day doing , if you are having problems, etc.... This is your world and Moody Bear is happy to be in it!</string>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
