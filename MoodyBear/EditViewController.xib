@@ -44,7 +44,6 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="329" id="Kx4-dy-Uwv"/>
                     </constraints>
-                    <string key="text">Personal Entry: You can talk about whatever you what! It is YOUR personal moody check-ins :) Talk about things you were excited about that day, things that happened, what's on your mind, what you spent your day doing , if you are having problems, etc.... This is your world and Moody Bear is happy to be in it!</string>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -85,14 +84,23 @@
                         </button>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkc-xQ-Yhi">
+                    <rect key="frame" x="181.5" y="832" width="51" height="30"/>
+                    <state key="normal" title="Update"/>
+                    <connections>
+                        <action selector="updateButtonPressed:" destination="-1" eventType="touchUpInside" id="fSX-iy-g4M"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="wJm-6J-cJ5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1Jn-2r-kef"/>
                 <constraint firstItem="OVg-iA-4md" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4x1-XZ-qi2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Lkc-xQ-Yhi" secondAttribute="bottom" id="HQK-IH-3xj"/>
                 <constraint firstItem="4ib-X3-BGT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="JYP-uk-NQY"/>
                 <constraint firstItem="OVg-iA-4md" firstAttribute="top" secondItem="wJm-6J-cJ5" secondAttribute="bottom" constant="10" id="JeE-th-qwh"/>
                 <constraint firstItem="5nq-qG-zsf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="M3E-j0-zVb"/>
+                <constraint firstItem="Lkc-xQ-Yhi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QhG-PO-fTL"/>
                 <constraint firstItem="5nq-qG-zsf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="Sir-um-ak3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OVg-iA-4md" secondAttribute="trailing" constant="20" id="WMX-0j-EMD"/>
                 <constraint firstItem="4ib-X3-BGT" firstAttribute="top" secondItem="OVg-iA-4md" secondAttribute="bottom" constant="20" id="WWf-em-Vl5"/>
