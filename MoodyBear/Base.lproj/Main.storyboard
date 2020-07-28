@@ -221,6 +221,32 @@
             </objects>
             <point key="canvasLocation" x="748" y="-320.68965517241378"/>
         </scene>
+        <!--Tag Graph View Controller-->
+        <scene sceneID="XTM-z4-u3N">
+            <objects>
+                <viewController id="vNZ-jJ-6dJ" customClass="TagGraphViewController" customModule="MoodyBear" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E7u-tq-GkU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioU-tC-Nkz" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="161" width="375" height="445"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GOH-BN-FjR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TTV-UI-DG8"/>
+                    <connections>
+                        <outlet property="frequencyChart" destination="ioU-tC-Nkz" id="lWj-FU-Oju"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUM-dm-LbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="-335.46798029556652"/>
+        </scene>
         <!--General Data View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -371,6 +397,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azy-Gd-Myz">
+                                <rect key="frame" x="302" y="251" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tags"/>
+                                <connections>
+                                    <segue destination="vNZ-jJ-6dJ" kind="show" id="j0b-LR-GsL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uVS-NG-Egz"/>

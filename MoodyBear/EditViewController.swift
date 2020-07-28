@@ -22,6 +22,7 @@ class EditViewController: UIViewController, TagListViewDelegate {
         
         //fill out the tabs from the db
         for temp in MoodDatabase.db.getTagsForMood(moodId: mood.id) {
+
             tagListView.addTag(temp.tagName)
         }
         

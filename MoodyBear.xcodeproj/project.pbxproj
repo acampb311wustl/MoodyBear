@@ -41,6 +41,7 @@
 		92FDAA6724C95EF200FD229B /* RelaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA6624C95EF200FD229B /* RelaxViewController.swift */; };
 		92FDAA6924CA61B900FD229B /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA6824CA61B900FD229B /* IntroViewController.swift */; };
 		92FDAA6B24CB8BF900FD229B /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA6A24CB8BF900FD229B /* TabViewController.swift */; };
+		92FDAA7224CD181100FD229B /* TagGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA7124CD181100FD229B /* TagGraphViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		92FDAA6624C95EF200FD229B /* RelaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxViewController.swift; sourceTree = "<group>"; };
 		92FDAA6824CA61B900FD229B /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		92FDAA6A24CB8BF900FD229B /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		92FDAA7124CD181100FD229B /* TagGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				15A0741724C32C1600C2B2EB /* LaunchScreen.storyboard */,
 				15A0741A24C32C1600C2B2EB /* Info.plist */,
 				15A0742024C32CA400C2B2EB /* MoodyBear-Bridging-Header.h */,
+				92FDAA7124CD181100FD229B /* TagGraphViewController.swift */,
 				15A0743124C32CBA00C2B2EB /* moods.db */,
 				15A0741224C32C1400C2B2EB /* Main.storyboard */,
 				92FDAA5824C9516700FD229B /* Chart2ViewController.swift */,
@@ -344,6 +347,7 @@
 				15A0742E24C32CA500C2B2EB /* FMDatabase.m in Sources */,
 				92FDAA5D24C95E9100FD229B /* SleepViewController.swift in Sources */,
 				15A0743024C32CA500C2B2EB /* FMDatabasePool.m in Sources */,
+				92FDAA7224CD181100FD229B /* TagGraphViewController.swift in Sources */,
 				92FDAA6324C95ED200FD229B /* SocialViewController.swift in Sources */,
 				156840BE24C4902B0025A519 /* CloseButton.swift in Sources */,
 				92FDAA5924C9516700FD229B /* Chart2ViewController.swift in Sources */,
