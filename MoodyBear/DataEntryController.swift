@@ -158,13 +158,6 @@ class DataEntryController: UIViewController, TagListViewDelegate {
           NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-    @IBAction func clearButtonAction(_ sender: Any) {
-        for temp in MoodDatabase.db.selectAllFromDatabase() {
-            print(temp.description)
-        }
-
-    }
-    
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         //print("Tag pressed: \(title), \(sender)")
     }

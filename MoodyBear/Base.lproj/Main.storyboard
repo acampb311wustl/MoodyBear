@@ -29,15 +29,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KnP-59-6tB">
                                 <rect key="frame" x="0.0" y="679" width="375" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQs-dL-IYC">
-                                        <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="30"/>
-                                        <state key="normal" title="Clear"/>
-                                        <connections>
-                                            <action selector="clearButtonAction:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Bud-ZK-86L"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKr-fX-qtU">
-                                        <rect key="frame" x="197.66666666666663" y="0.0" width="177.33333333333337" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submitButtonAction:" destination="9pv-A4-QxB" eventType="touchUpInside" id="VIO-I4-r4B"/>
