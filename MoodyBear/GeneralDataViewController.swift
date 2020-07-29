@@ -129,7 +129,7 @@ class GeneralDataViewController: UIViewController {
             social.text = "You've been social."
         }
         else {
-            social.text = "You've been very social!."
+            social.text = "You've been very social!"
         }
         
         
@@ -143,7 +143,7 @@ class GeneralDataViewController: UIViewController {
             motivation.text = "You are motivated."
         }
         else {
-            motivation.text = "You are very driven!."
+            motivation.text = "You are very driven!"
         }
         
         
@@ -157,7 +157,7 @@ class GeneralDataViewController: UIViewController {
             sleep.text = "You are sleeping okay."
         }
         else {
-            sleep.text = "You are getting great sleep!."
+            sleep.text = "You are getting great sleep!"
         }
         
         let relaxAvg = Double(relax1)/Double((words.count))

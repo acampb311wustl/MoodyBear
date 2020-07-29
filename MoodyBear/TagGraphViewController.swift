@@ -53,7 +53,10 @@ class TagGraphViewController: UIViewController {
     func frequencyChartUpdate () {
         let words = MoodDatabase.db.selectAllFromDatabase()
         
+        tagsArray = []
+        countArray = []
         
+        barArray = []
         
         for i in 1...words.count{
             for temp in MoodDatabase.db.getTagsForMood(moodId: i) {
@@ -75,7 +78,7 @@ class TagGraphViewController: UIViewController {
                     print(countArray)
                 }
                 
-  
+                
                 
                 
                 //                for item in tagsArray{
@@ -94,15 +97,16 @@ class TagGraphViewController: UIViewController {
             print(tagsArray)
             print(countArray)
         }
-//        for i in 0..<countArray.count{
-//              countArray[i] = countArray[i]/3
-//          }
+        //        for i in 0..<countArray.count{
+        //              countArray[i] = countArray[i]/2
+        //          }
         for i in 0 ..< countArray.count{
             barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
+            print(barArray)
         }
         
         
-//        let entry1 = BarChartDataEntry(x: 1.0, y: 7.0)
+        //        let entry1 = BarChartDataEntry(x: 1.0, y: 7.0)
         //                  let entry2 = BarChartDataEntry(x: 2.0, y: Double(out))
         //                  let entry3 = BarChartDataEntry(x: 3.0, y: Double(temp))
         //                  let entry4 = BarChartDataEntry(x: 4.0, y: Double(social))
@@ -111,12 +115,21 @@ class TagGraphViewController: UIViewController {
         //                  let entry7 = BarChartDataEntry(x: 7.0, y: Double(relax))
         //                  let labels = ["Food", "Outside", "Temperament", "Social", "Motivation", "Sleep", "Relaxation"]
         //
-                          frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:tagsArray)
-                          let dataSet = BarChartDataSet(entries: barArray, label: "Tags")
+            frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: tagsArray)
+//        frequencyChart.xAxis.granularityEnabled = true
+//        pieChart.legend.font = UIFont(name: "Futura", size: 10)!
+//        frequencyChart.legend.entries = tagsArray
+        frequencyChart.xAxis.drawGridLinesEnabled = false
+        frequencyChart.xAxis.labelPosition = .bottom
+        frequencyChart.xAxis.labelCount = tagsArray.count
+//        frequencyChart.xAxis.granularity = 2
+        frequencyChart.leftAxis.enabled = true
+//        frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:tagsArray)
+        let dataSet = BarChartDataSet(entries: barArray, label: "Tags")
         //                  //filler data for bar chart until I get  tags to work with
         //                  dataSet.colors = [UIColor.red, UIColor.green, UIColor.blue, UIColor.systemPink, UIColor.purple, UIColor.yellow, UIColor.orange]
-                          let data = BarChartData(dataSets: [dataSet])
-                          frequencyChart.data = data
+        let data = BarChartData(dataSets: [dataSet])
+        frequencyChart.data = data
         //          //        print("this is frequency chart \(frequencyChart)")
         //                  frequencyChart.chartDescription?.text = "Mood Factors"
         //
