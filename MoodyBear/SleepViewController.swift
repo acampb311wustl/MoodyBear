@@ -14,7 +14,8 @@ class SleepViewController: UIViewController  {
     //    @IBOutlet weak var number2: UISlider!
     //    @IBOutlet weak var number3: UISlider!
 
-
+    @IBOutlet var label: UILabel!
+    
 
     //    var lineChart: LineChartView!
 //    @IBOutlet var lineChart: LineChartView!
@@ -27,6 +28,7 @@ class SleepViewController: UIViewController  {
 //    @IBOutlet var lineChart: LineChartView!
     
 //    @IBOutlet var frequencyChart: BarChartView!
+      var avg = 0.0
     
 
     @IBOutlet var lineChart: LineChartView!
@@ -70,20 +72,25 @@ class SleepViewController: UIViewController  {
     }
     
     func lineChartUpdate () {
+          avg = 0
         let currentLevels = MoodDatabase.db.selectAllFromDatabase()
         
         // 1 - creating an array of data entries
         var yValues : [ChartDataEntry] = [ChartDataEntry]()
         print("yvalues are \(yValues)")
         for i in 0 ..< currentLevels.count {
+             avg = avg + Double(currentLevels[i].rest)
             yValues.append(ChartDataEntry(x: Double(i + 1), y: Double(currentLevels[i].rest)))
         }
-        
+        avg = avg/Double(currentLevels.count)
+                  avg = round(100 * avg) / 100
+             label.text = "Your average sleep level is \(avg) out of 5."
         let data = LineChartData()
         let ds = LineChartDataSet(entries: yValues)
            lineChart.chartDescription?.text = "Satisfaction With Sleep Over Entries"
         data.addDataSet(ds)
         lineChart.data = data
+          lineChart.backgroundColor = UIColor.white
 //        print("this is line chart \(lineChart)")
         //This must stay at end of function
         lineChart.notifyDataSetChanged()

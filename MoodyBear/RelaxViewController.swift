@@ -14,8 +14,9 @@ class RelaxViewController: UIViewController  {
     //    @IBOutlet weak var number2: UISlider!
     //    @IBOutlet weak var number3: UISlider!
 
-
-
+    @IBOutlet var label: UILabel!
+    
+        var avg = 0.0
     //    var lineChart: LineChartView!
 //    @IBOutlet var lineChart: LineChartView!
     //    var barChart: LineChartView!
@@ -71,20 +72,25 @@ class RelaxViewController: UIViewController  {
     }
     
     func lineChartUpdate () {
+         avg = 0
         let currentLevels = MoodDatabase.db.selectAllFromDatabase()
         
         // 1 - creating an array of data entries
         var yValues : [ChartDataEntry] = [ChartDataEntry]()
         print("yvalues are \(yValues)")
         for i in 0 ..< currentLevels.count {
+              avg = avg + Double(currentLevels[i].calm)
             yValues.append(ChartDataEntry(x: Double(i + 1), y: Double(currentLevels[i].calm)))
         }
-        
+        avg = avg/Double(currentLevels.count)
+                         avg = round(100 * avg) / 100
+                    label.text = "Your average relaxation level is \(avg) out of 5."
         let data = LineChartData()
         let ds = LineChartDataSet(entries: yValues)
            lineChart.chartDescription?.text = "Relaxation Over Entries"
         data.addDataSet(ds)
         lineChart.data = data
+          lineChart.backgroundColor = UIColor.white
 //        print("this is line chart \(lineChart)")
         //This must stay at end of function
         lineChart.notifyDataSetChanged()

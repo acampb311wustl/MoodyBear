@@ -11,8 +11,6 @@ import UIKit
 class GeneralDataViewController: UIViewController {
     
     
-    
-    
     @IBOutlet var overall: UILabel!
     
     
@@ -21,6 +19,7 @@ class GeneralDataViewController: UIViewController {
     @IBOutlet var food: UILabel!
     
     
+    @IBOutlet var tagLabel: UILabel!
     @IBOutlet var out: UILabel!
     
     @IBOutlet var temp: UILabel!
@@ -42,10 +41,47 @@ class GeneralDataViewController: UIViewController {
     
     @objc func loadList(){
         let words = MoodDatabase.db.selectAllFromDatabase()
-        
+   
+        var tagsArray: [String] = []
+        var countArray: [Int] = []
 
+
+        if words.count > 0 {
+        for i in 1...words.count{
+            for temp in MoodDatabase.db.getTagsForMood(moodId: i) {
+                print("temp is\(temp)")
+                if tagsArray.contains(temp.tagName){
+                    print("contains")
+                    for i in 0 ..< tagsArray.count{
+                        if temp.tagName == tagsArray[i]{
+                            print("this is the same tag \(temp.tagName)")
+                            countArray[i] = countArray[i] + 1
+                        }
+                    }
+                }
+                else{
+                    print("this is NOT the same tag \(temp.tagName)")
+                    tagsArray.append(temp.tagName)
+                    countArray.append(1)
+                    print(tagsArray)
+                    print(countArray)
+                }
+                
+                
+            }
+            print(tagsArray)
+            print(countArray)
+        }
+        var p = 0
+        let max = countArray.max()
+        for i in 0..<countArray.count{
+            if countArray[i] == max{
+                p = i
+            }
+            print(p)
+        }
         
-        
+        tagLabel.text = "Your highest tag: \(tagsArray[p])"
         
         
         
@@ -173,7 +209,7 @@ class GeneralDataViewController: UIViewController {
             relax.text = "You are relaxed."
         }
         
-        
+        }
     }
     
     /*

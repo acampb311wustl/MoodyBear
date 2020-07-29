@@ -50,7 +50,7 @@ class DataEntryController: UIViewController, TagListViewDelegate {
         if currentQuestion == 1{
             //eat
             eat = sender.tag
-            print("eat is changed")
+
         }
         if currentQuestion == 2{
               //out

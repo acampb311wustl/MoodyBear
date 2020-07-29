@@ -79,20 +79,6 @@ class TagGraphViewController: UIViewController {
                 }
                 
                 
-                
-                
-                //                for item in tagsArray{
-                //                    if temp.tagName == item{
-                //                        print("this is the same tag \(temp.tagName)")
-                //                        let u = index(ofAccessibilityElement: item)
-                //                        countArray[u] = countArray[u] + 1
-                //                    }
-                //                    else{
-                //                                  print("this is NOT the same tag \(temp.tagName)")
-                //                        tagsArray.append(temp.tagName)
-                //                        countArray.append(1)
-                //                    }
-                //                }
             }
             print(tagsArray)
             print(countArray)
