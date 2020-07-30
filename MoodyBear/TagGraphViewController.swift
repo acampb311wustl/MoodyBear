@@ -10,119 +10,239 @@ import UIKit
 import Charts
 
 class TagGraphViewController: UIViewController {
+    @IBOutlet var selector: UISegmentedControl!
     var tagsArray: [String] = []
     var countArray: [Int] = []
     @IBOutlet var frequencyChart: BarChartView!
     var barArray:[BarChartDataEntry] = []
+    var index = 0
+    
+//    @IBAction func button(_ sender: Any) {
+//        let detailVC = TagSpecificViewController()
+//        
+//        self.present(detailVC, animated: true, completion: nil)
+//    }
+    @IBAction func selectTag(_ sender: Any) {
+        if selector.selectedSegmentIndex == 0{
+            index = 0
+            frequencyChartUpdate()
+            
+        }
+        else {
+            index = 1
+            frequencyChartUpdate()
+        }
+        
+        
+    }
+    //    @IBAction func selectOne(_ sender: Any) {
+    //        if selector.selectedSegmentIndex == 0{
+    //            index = 0
+    //            frequencyChartUpdate()
+    //
+    //        }
+    ////        else {
+    ////            index = 1
+    ////            frequencyChartUpdate()
+    ////        }
+    //
+    //    }
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        //        let theFrame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        //        let scrollView = UIScrollView(frame: theFrame)
-        //        //        scrollView.backgroundColor = UIColor.gray
-        //        view.addSubview(scrollView)
-        //        let theGraphFrame = CGRect(x: 3, y: 0, width: self.view.frame.size.width-6, height: 250)
-        //        lineChart = LineChartView(frame: theGraphFrame)
         
-        // Do any additional setup after loading the view.
-        //        lineChartUpdate()
         frequencyChartUpdate()
-        //        pieChartUpdate()
+        
     }
     
-    //    func lineChartUpdate () {
-    //        let currentLevels = MoodDatabase.db.selectAllFromDatabase()
-    //
-    //        // 1 - creating an array of data entries
-    //        var yValues : [ChartDataEntry] = [ChartDataEntry]()
-    //        print("yvalues are \(yValues)")
-    //        for i in 0 ..< currentLevels.count {
-    //            yValues.append(ChartDataEntry(x: Double(i + 1), y: Double(currentLevels[i].level)))
-    //        }
-    //
-    //        let data = LineChartData()
-    //        let ds = LineChartDataSet(entries: yValues)
-    //        data.addDataSet(ds)
-    //        lineChart.data = data
-    ////        print("this is line chart \(lineChart)")
-    //        //This must stay at end of function
-    //        lineChart.notifyDataSetChanged()
-    //    }
+    
     
     func frequencyChartUpdate () {
         let words = MoodDatabase.db.selectAllFromDatabase()
-        
         tagsArray = []
         countArray = []
-        
         barArray = []
-        
-        for i in 1...words.count{
-            for temp in MoodDatabase.db.getTagsForMood(moodId: i) {
-                print("temp is\(temp)")
-                if tagsArray.contains(temp.tagName){
-                    print("contains")
-                    for i in 0 ..< tagsArray.count{
-                        if temp.tagName == tagsArray[i]{
-                            print("this is the same tag \(temp.tagName)")
-                            countArray[i] = countArray[i] + 1
+        if index == 1 && words.count>3 {
+            for i in (words.count-2)...words.count{
+                for temp in MoodDatabase.db.getTagsForMood(moodId: i) {
+                    print("temp is\(temp)")
+                    if tagsArray.contains(temp.tagName){
+                        print("contains")
+                        for i in 0 ..< tagsArray.count{
+                            if temp.tagName == tagsArray[i]{
+                                print("this is the same tag \(temp.tagName)")
+                                countArray[i] = countArray[i] + 1
+                            }
                         }
                     }
+                    else{
+                        print("this is NOT the same tag \(temp.tagName)")
+                        tagsArray.append(temp.tagName)
+                        countArray.append(1)
+                        print(tagsArray)
+                        print(countArray)
+                    }
+                    
                 }
-                else{
-                    print("this is NOT the same tag \(temp.tagName)")
-                    tagsArray.append(temp.tagName)
-                    countArray.append(1)
-                    print(tagsArray)
-                    print(countArray)
-                }
-                
-                
+                print(tagsArray)
+                print(countArray)
             }
-            print(tagsArray)
-            print(countArray)
+            //        for i in 0..<countArray.count{
+            //              countArray[i] = countArray[i]/2
+            //          }
+            //        if index == 0{
+            //            print("index is 0")
+            //            for i in 0 ..< countArray.count{
+            //                barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
+            //                print(barArray)
+            //                frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: tagsArray)
+            //                       frequencyChart.xAxis.labelCount = tagsArray.count
+            //            }
+            //        }
+            //        else{
+            //            print("index is 1")
+            //            var array: [String] = []
+            //            if countArray.count > 3 {
+            //                for i in 0 ..< 3{
+            //                    barArray = []
+            //                    barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
+            //                    print(barArray)
+            //                    array.append(tagsArray[i])
+            //                    frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: array)
+            //                           frequencyChart.xAxis.labelCount = 3
+            //                }
+            //            }
+            //            else{
+            //                for i in 0 ..< countArray.count{
+            //                    barArray = []
+            //                    barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
+            //                    print(barArray)
+            //                    frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: tagsArray)
+            //                           frequencyChart.xAxis.labelCount = tagsArray.count
+            //                }
+            //            }
+            //        }
+            
+            
+            for i in 0 ..< countArray.count{
+                barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
+                print(barArray)
+                frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: tagsArray)
+                frequencyChart.xAxis.labelCount = tagsArray.count
+            }
+            frequencyChart.xAxis.drawGridLinesEnabled = false
+            frequencyChart.xAxis.labelPosition = .bottom
+            
+            //        frequencyChart.xAxis.granularity = 2
+            frequencyChart.leftAxis.enabled = true
+            //        frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:tagsArray)
+            let dataSet = BarChartDataSet(entries: barArray, label: "Tags")
+            //                  //filler data for bar chart until I get  tags to work with
+            //                  dataSet.colors = [UIColor.red, UIColor.green, UIColor.blue, UIColor.systemPink, UIColor.purple, UIColor.yellow, UIColor.orange]
+            let data = BarChartData(dataSets: [dataSet])
+            frequencyChart.data = data
+            //          //        print("this is frequency chart \(frequencyChart)")
+            //                  frequencyChart.chartDescription?.text = "Mood Factors"
+            //
+            //                  //All other additions to this function will go here
+            //
+            //                  //This must stay at end of function
+            //
+            frequencyChart.notifyDataSetChanged()
+            
         }
-        //        for i in 0..<countArray.count{
-        //              countArray[i] = countArray[i]/2
-        //          }
-        for i in 0 ..< countArray.count{
-            barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
-            print(barArray)
+        else{
+            for i in 1...words.count{
+
+                for temp in MoodDatabase.db.getTagsForMood(moodId: i) {
+                    print("temp is\(temp)")
+                    if tagsArray.contains(temp.tagName){
+                        print("contains")
+                        for i in 0 ..< tagsArray.count{
+                            if temp.tagName == tagsArray[i]{
+                                print("this is the same tag \(temp.tagName)")
+                                countArray[i] = countArray[i] + 1
+                            }
+                        }
+                    }
+                    else{
+                        print("this is NOT the same tag \(temp.tagName)")
+                        tagsArray.append(temp.tagName)
+                        countArray.append(1)
+                        print(tagsArray)
+                        print(countArray)
+                    }
+                    
+                }
+                print(tagsArray)
+                print(countArray)
+            }
+            //        for i in 0..<countArray.count{
+            //              countArray[i] = countArray[i]/2
+            //          }
+            //        if index == 0{
+            //            print("index is 0")
+            //            for i in 0 ..< countArray.count{
+            //                barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
+            //                print(barArray)
+            //                frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: tagsArray)
+            //                       frequencyChart.xAxis.labelCount = tagsArray.count
+            //            }
+            //        }
+            //        else{
+            //            print("index is 1")
+            //            var array: [String] = []
+            //            if countArray.count > 3 {
+            //                for i in 0 ..< 3{
+            //                    barArray = []
+            //                    barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
+            //                    print(barArray)
+            //                    array.append(tagsArray[i])
+            //                    frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: array)
+            //                           frequencyChart.xAxis.labelCount = 3
+            //                }
+            //            }
+            //            else{
+            //                for i in 0 ..< countArray.count{
+            //                    barArray = []
+            //                    barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
+            //                    print(barArray)
+            //                    frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: tagsArray)
+            //                           frequencyChart.xAxis.labelCount = tagsArray.count
+            //                }
+            //            }
+            //        }
+            
+            
+            for i in 0 ..< countArray.count{
+                barArray.append(BarChartDataEntry(x: Double(i), y:Double(countArray[i])))
+                print(barArray)
+                frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: tagsArray)
+                frequencyChart.xAxis.labelCount = tagsArray.count
+            }
+            frequencyChart.xAxis.drawGridLinesEnabled = false
+            frequencyChart.xAxis.labelPosition = .bottom
+            
+            //        frequencyChart.xAxis.granularity = 2
+            frequencyChart.leftAxis.enabled = true
+            //        frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:tagsArray)
+            let dataSet = BarChartDataSet(entries: barArray, label: "Tags")
+            //                  //filler data for bar chart until I get  tags to work with
+            //                  dataSet.colors = [UIColor.red, UIColor.green, UIColor.blue, UIColor.systemPink, UIColor.purple, UIColor.yellow, UIColor.orange]
+            let data = BarChartData(dataSets: [dataSet])
+            frequencyChart.data = data
+            //          //        print("this is frequency chart \(frequencyChart)")
+            //                  frequencyChart.chartDescription?.text = "Mood Factors"
+            //
+            //                  //All other additions to this function will go here
+            //
+            //                  //This must stay at end of function
+            //
+            frequencyChart.notifyDataSetChanged()
         }
-        
-        
-        //        let entry1 = BarChartDataEntry(x: 1.0, y: 7.0)
-        //                  let entry2 = BarChartDataEntry(x: 2.0, y: Double(out))
-        //                  let entry3 = BarChartDataEntry(x: 3.0, y: Double(temp))
-        //                  let entry4 = BarChartDataEntry(x: 4.0, y: Double(social))
-        //                  let entry5 = BarChartDataEntry(x: 5.0, y: Double(motivation))
-        //                  let entry6 = BarChartDataEntry(x: 6.0, y: Double(sleep))
-        //                  let entry7 = BarChartDataEntry(x: 7.0, y: Double(relax))
-        //                  let labels = ["Food", "Outside", "Temperament", "Social", "Motivation", "Sleep", "Relaxation"]
-        //
-            frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: tagsArray)
-//        frequencyChart.xAxis.granularityEnabled = true
-//        pieChart.legend.font = UIFont(name: "Futura", size: 10)!
-//        frequencyChart.legend.entries = tagsArray
-        frequencyChart.xAxis.drawGridLinesEnabled = false
-        frequencyChart.xAxis.labelPosition = .bottom
-        frequencyChart.xAxis.labelCount = tagsArray.count
-//        frequencyChart.xAxis.granularity = 2
-        frequencyChart.leftAxis.enabled = true
-//        frequencyChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:tagsArray)
-        let dataSet = BarChartDataSet(entries: barArray, label: "Tags")
-        //                  //filler data for bar chart until I get  tags to work with
-        //                  dataSet.colors = [UIColor.red, UIColor.green, UIColor.blue, UIColor.systemPink, UIColor.purple, UIColor.yellow, UIColor.orange]
-        let data = BarChartData(dataSets: [dataSet])
-        frequencyChart.data = data
-        //          //        print("this is frequency chart \(frequencyChart)")
-        //                  frequencyChart.chartDescription?.text = "Mood Factors"
-        //
-        //                  //All other additions to this function will go here
-        //
-        //                  //This must stay at end of function
-        //                  frequencyChart.notifyDataSetChanged()
     }
     
     
@@ -142,6 +262,13 @@ class TagGraphViewController: UIViewController {
     //        //This must stay at end of function
     //        pieChart.notifyDataSetChanged()
     //    }
+    
+    
+    
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         //                lineChartUpdate()
         frequencyChartUpdate()

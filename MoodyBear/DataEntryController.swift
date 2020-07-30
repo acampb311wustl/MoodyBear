@@ -135,11 +135,13 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     }
     
     @IBAction func newTagAddButton(_ sender: Any) {
+        if newTagTextField.text != ""{
         if let tempText = newTagTextField.text
         {
             tagListView.addTag(tempText)
         }
         newTagTextField.text = ""
+    }
     }
     
     @IBAction func submitButtonAction(_ sender: Any) {
@@ -169,7 +171,7 @@ class DataEntryController: UIViewController, TagListViewDelegate {
     //Questions and Answers for Questionaire
     let questions = ["I ate well today", "I spent enough time outside today", "I am not angry", "I spent time being social today","I feel motivated","I got enough sleep last night","I feel relaxed and not stressed"]
     //graphing categories- eating, outside, temperament, social, motivation, sleep, relaxation
-    let answers = ["Definitely", "Maybe", "Meh", "Not really", "No way"]
+    let answers = ["Yes!", "Maybe", "Meh", "Not really", "No way"]
     //    let questions = ["I am content right now?", "I spent enough time outside today?", "If my food order was missing items, I would be angry", "I am not having postive thoughts right now","I feel motivated","I am enthusiastic right now","I feel overwhelmed"]
     ////    let answers = [["Definitely", "somewhat agree", "not sure", "not really", "No way"]]
     //        let answers = [["YES!", "sure", "IDK", "not really", "NO!"]]

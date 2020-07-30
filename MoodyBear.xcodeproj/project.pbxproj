@@ -42,6 +42,7 @@
 		92FDAA6924CA61B900FD229B /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA6824CA61B900FD229B /* IntroViewController.swift */; };
 		92FDAA6B24CB8BF900FD229B /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA6A24CB8BF900FD229B /* TabViewController.swift */; };
 		92FDAA7224CD181100FD229B /* TagGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA7124CD181100FD229B /* TagGraphViewController.swift */; };
+		92FDAA7624D23B8300FD229B /* TagSpecificViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAA7524D23B8300FD229B /* TagSpecificViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		92FDAA6824CA61B900FD229B /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		92FDAA6A24CB8BF900FD229B /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		92FDAA7124CD181100FD229B /* TagGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGraphViewController.swift; sourceTree = "<group>"; };
+		92FDAA7524D23B8300FD229B /* TagSpecificViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSpecificViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				92FDAA7124CD181100FD229B /* TagGraphViewController.swift */,
 				15A0743124C32CBA00C2B2EB /* moods.db */,
 				15A0741224C32C1400C2B2EB /* Main.storyboard */,
+				92FDAA7524D23B8300FD229B /* TagSpecificViewController.swift */,
 				92FDAA5824C9516700FD229B /* Chart2ViewController.swift */,
 				15A0745E24C36C2600C2B2EB /* MoodDatabase.swift */,
 				15A0741024C32C1400C2B2EB /* ChartViewController.swift */,
@@ -349,6 +352,7 @@
 				15A0743024C32CA500C2B2EB /* FMDatabasePool.m in Sources */,
 				92FDAA7224CD181100FD229B /* TagGraphViewController.swift in Sources */,
 				92FDAA6324C95ED200FD229B /* SocialViewController.swift in Sources */,
+				92FDAA7624D23B8300FD229B /* TagSpecificViewController.swift in Sources */,
 				156840BE24C4902B0025A519 /* CloseButton.swift in Sources */,
 				92FDAA5924C9516700FD229B /* Chart2ViewController.swift in Sources */,
 				15A0740D24C32C1400C2B2EB /* SceneDelegate.swift in Sources */,

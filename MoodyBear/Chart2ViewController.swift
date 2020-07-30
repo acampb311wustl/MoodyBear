@@ -129,7 +129,7 @@ class Chart2ViewController: UIViewController  {
         relax = 0
         let words = MoodDatabase.db.selectAllFromDatabase()
         if words.count > 3{
-            for i in 0 ..< 3 {
+            for i in (words.count-3) ..< words.count {
                 eat = words[i].food + eat
                 out = words[i].nature + out
                 temp = words[i].temperament + temp
