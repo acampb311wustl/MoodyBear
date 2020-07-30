@@ -24,7 +24,7 @@ class TagSpecificViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel!.text = "\(tagsArray[indexPath.row]) - Count: \(countArray[indexPath.row]) - Average Mood: \(moodArray[indexPath.row])"
-        
+        cell.backgroundColor = UIColor.systemTeal
         return cell
     }
     

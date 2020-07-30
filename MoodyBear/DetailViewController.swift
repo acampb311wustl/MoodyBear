@@ -38,7 +38,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         let myCell = tableView.dequeueReusableCell(withIdentifier: "theCell")! as UITableViewCell
         dataCache = MoodDatabase.db.selectAllFromDatabase()
         myCell.textLabel!.text = dataCache[indexPath.row].description
-        
+            myCell.backgroundColor = UIColor.systemTeal
         return myCell
     }
     
